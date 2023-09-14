@@ -435,6 +435,11 @@ Public Class Admin_Form
     End Sub
 
     Private Sub removeSelectedBtn_Click(sender As Object, e As EventArgs) Handles removeSelectedBtn.Click
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+            Exit Sub
+        End If
+
         Dim rows As DataGridViewSelectedRowCollection = pi_tp_dgv.SelectedRows
 
         If rows.Count >= 1 Then
@@ -459,6 +464,11 @@ Public Class Admin_Form
     End Sub
 
     Private Sub removeAllBtn_Click(sender As Object, e As EventArgs) Handles removeAllBtn.Click
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+            Exit Sub
+        End If
+
         Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
         If rows.Count >= 1 Then
             If MsgBox("Do you want to clear out print queue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
@@ -509,7 +519,7 @@ Public Class Admin_Form
         printBtn.Enabled = False
 
         If IsAccessRunning() Then
-            MsgBox("Please close all opened access app")
+            MsgBox("Please close all opened MS ACCESS app")
         ElseIf rows.Count <= 0 Then
             MsgBox("No data to print")
         Else
