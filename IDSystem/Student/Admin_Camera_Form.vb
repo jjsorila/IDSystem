@@ -8,7 +8,9 @@ Public Class Admin_Camera_Form
     Dim CAMERA As VideoCaptureDevice
 
     Private Sub CAPTURAR(sender As Object, eventArgs As NewFrameEventArgs)
-        cameraFeed.Image = DirectCast(eventArgs.Frame.Clone(), Bitmap)
+        Dim clonedFrame As Image = DirectCast(eventArgs.Frame.Clone(), Bitmap)
+        clonedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX)
+        cameraFeed.Image = clonedFrame
     End Sub
 
     Private Sub Admin_Camera_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -26,6 +26,7 @@ Partial Class Camera_Form
         Me.captureBtn = New PictureBoxAbouAmmar.صورة_دائرة()
         Me.okBtn = New System.Windows.Forms.Button()
         Me.cancelBtn = New System.Windows.Forms.Button()
+        Me.CaptureCamera = New System.ComponentModel.BackgroundWorker()
         CType(Me.cameraFeed, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.captureBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -82,6 +83,9 @@ Partial Class Camera_Form
         Me.cancelBtn.TabIndex = 4
         Me.cancelBtn.UseVisualStyleBackColor = True
         '
+        'CaptureCamera
+        '
+        '
         'Camera_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -108,4 +112,5 @@ Partial Class Camera_Form
     Friend WithEvents captureBtn As PictureBoxAbouAmmar.صورة_دائرة
     Friend WithEvents okBtn As Button
     Friend WithEvents cancelBtn As Button
+    Friend WithEvents CaptureCamera As System.ComponentModel.BackgroundWorker
 End Class

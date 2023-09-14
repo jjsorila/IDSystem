@@ -4,9 +4,10 @@ Imports System.Drawing.Imaging
 Imports System.IO
 Public Class Camera_Form
     Dim CAMERA As VideoCaptureDevice
-
     Private Sub CAPTURAR(sender As Object, eventArgs As NewFrameEventArgs)
-        cameraFeed.Image = DirectCast(eventArgs.Frame.Clone(), Bitmap)
+        Dim clonedFrame As Image = DirectCast(eventArgs.Frame.Clone(), Bitmap)
+        clonedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX)
+        cameraFeed.Image = clonedFrame
     End Sub
 
     Private Sub Camera_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
