@@ -49,51 +49,24 @@ Public Class Camera_Form
     End Sub
 
     Private Sub okBtn_Click(sender As Object, e As EventArgs) Handles okBtn.Click
-        'If MsgBox("Is this good?", MsgBoxStyle.YesNo) = DialogResult.Yes Then
+        If cameraFeed.Image.Width = 1280 And cameraFeed.Image.Height = 720 Then
+            'Camera Resolution 1280 x 720
 
-        '    If cameraFeed.Image.Height < 1000 Then
-        '        Using imgResult As New Bitmap(cameraFeed.Image)
-        '            imgResult.Save(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"))
-        '        End Using
+            'CROP CAMERA FEED IMAGE
+            Dim CropRect As New Rectangle(278, 0, 736, 720)
 
-        '        Using fs As New IO.FileStream(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"), IO.FileMode.Open, IO.FileAccess.Read)
-        '            Form1.id_picture.Image = Image.FromStream(fs)
-        '        End Using
-        '    Else
-        '        'Recommended Camera Resolution 1920 x 1080
-
-        '        'CROP CAMERA FEED IMAGE
-        '        Dim CropRect As New Rectangle(449, 0, 1000, 1000)
-
-        '        Using imgResult As New Bitmap(CropRect.Width, CropRect.Height)
-        '            Using grResult As Graphics = Graphics.FromImage(imgResult)
-        '                grResult.DrawImage(cameraFeed.Image, New Rectangle(0, 0, CropRect.Width, CropRect.Height), CropRect, GraphicsUnit.Pixel)
-        '                imgResult.Save(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"))
-        '            End Using
-        '        End Using
-
-        '        Using fs As New IO.FileStream(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"), IO.FileMode.Open, IO.FileAccess.Read)
-        '            Form1.id_picture.Image = Image.FromStream(fs)
-        '        End Using
-        '    End If
-
-        '    Form1.isIdUploaded = 1
-        '    Select_Photo_Source.Close()
-        '    Me.Close()
-        'Else
-        '    cancelBtn.PerformClick()
-        'End If
-
-        If cameraFeed.Image.Height < 1000 Then
-            Using imgResult As New Bitmap(cameraFeed.Image)
-                imgResult.Save(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"))
+            Using imgResult As New Bitmap(CropRect.Width, CropRect.Height)
+                Using grResult As Graphics = Graphics.FromImage(imgResult)
+                    grResult.DrawImage(cameraFeed.Image, New Rectangle(0, 0, CropRect.Width, CropRect.Height), CropRect, GraphicsUnit.Pixel)
+                    imgResult.Save(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"))
+                End Using
             End Using
 
             Using fs As New IO.FileStream(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"), IO.FileMode.Open, IO.FileAccess.Read)
                 Form1.id_picture.Image = Image.FromStream(fs)
             End Using
-        Else
-            'Recommended Camera Resolution 1920 x 1080
+        ElseIf cameraFeed.Image.Width = 1920 And cameraFeed.Image.Height = 1080 Then
+            'Camera Resolution 1920 x 1080
 
             'CROP CAMERA FEED IMAGE
             Dim CropRect As New Rectangle(449, 0, 1000, 1000)
@@ -103,6 +76,14 @@ Public Class Camera_Form
                     grResult.DrawImage(cameraFeed.Image, New Rectangle(0, 0, CropRect.Width, CropRect.Height), CropRect, GraphicsUnit.Pixel)
                     imgResult.Save(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"))
                 End Using
+            End Using
+
+            Using fs As New IO.FileStream(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"), IO.FileMode.Open, IO.FileAccess.Read)
+                Form1.id_picture.Image = Image.FromStream(fs)
+            End Using
+        Else
+            Using imgResult As New Bitmap(cameraFeed.Image)
+                imgResult.Save(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"))
             End Using
 
             Using fs As New IO.FileStream(Path.Combine(Application.StartupPath, "temp_student_pic.jpg"), IO.FileMode.Open, IO.FileAccess.Read)
