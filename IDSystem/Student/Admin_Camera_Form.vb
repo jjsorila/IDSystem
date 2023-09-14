@@ -1,14 +1,12 @@
 ﻿Imports AForge.Video
 Imports AForge.Video.DirectShow
-Imports System.Drawing.Imaging
 Imports System.IO
-Imports System.Text.RegularExpressions
 
 Public Class Admin_Camera_Form
     Dim CAMERA As VideoCaptureDevice
 
     Private Sub CAPTURAR(sender As Object, eventArgs As NewFrameEventArgs)
-        Dim clonedFrame As Image = DirectCast(eventArgs.Frame.Clone(), Bitmap)
+        Dim clonedFrame As Bitmap = DirectCast(eventArgs.Frame.Clone(), Bitmap)
         clonedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX)
         cameraFeed.Image = clonedFrame
     End Sub
