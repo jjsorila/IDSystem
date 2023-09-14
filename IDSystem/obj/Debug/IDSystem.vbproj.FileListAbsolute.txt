@@ -17,6 +17,7 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Select_Photo_Source.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Signpad_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Camera_Form.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Change_PIN.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Form1.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Resources.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Select_Photo_Source.resources
@@ -27,4 +28,3 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.CopyComplete
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.exe
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.xml
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.pdb
-C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Change_PIN.resources
