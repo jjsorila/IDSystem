@@ -711,6 +711,7 @@ Public Class Admin_Form
 
     'CLEANUP WORK==================================================================================================================================================
     Private Sub Admin_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Form1.isAdminFormOpen = False
         CleanupWorker.RunWorkerAsync()
     End Sub
 

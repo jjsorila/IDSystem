@@ -5,6 +5,7 @@ Public Class Form1
     Public DB As New Connection
     Public isIdUploaded As Integer = 0
     Public isSignatureUploaded As Integer = 0
+    Public isAdminFormOpen As Boolean = False
 
     Public Sub loadData(Optional query As String = "SELECT TOP 10 full_name AS Full_Name FROM student_search ORDER BY full_name ASC")
         Using adpt As New OleDbDataAdapter(query, DB.student_data_conn)
@@ -197,7 +198,11 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Admin_Creds.Show()
+        If isAdminFormOpen Then
+            MsgBox("Admin Form is already open")
+        Else
+            Admin_Creds.Show()
+        End If
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
