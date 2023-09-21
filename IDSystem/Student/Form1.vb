@@ -202,8 +202,16 @@ Public Class Form1
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If MsgBox("Do you want to exit the application?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Me.Dispose()
-            End
+            Try
+                For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
+                    process.Kill()
+                Next
+            Catch ex As Exception
+
+            Finally
+                Me.Dispose()
+                End
+            End Try
         Else
             e.Cancel = True
         End If

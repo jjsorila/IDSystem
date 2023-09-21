@@ -77,7 +77,7 @@ Partial Class Form1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Location = New System.Drawing.Point(155, 16)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(105, 105)
         Me.PictureBox1.TabIndex = 0
@@ -104,9 +104,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Location = New System.Drawing.Point(23, 9)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Size = New System.Drawing.Size(937, 133)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
@@ -126,9 +126,9 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.year)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox2.Location = New System.Drawing.Point(520, 152)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Size = New System.Drawing.Size(440, 293)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
@@ -266,9 +266,9 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.GroupBox5)
         Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox3.Location = New System.Drawing.Point(23, 152)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox3.Size = New System.Drawing.Size(479, 630)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
@@ -438,9 +438,9 @@ Partial Class Form1
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox4.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(520, 455)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Size = New System.Drawing.Size(440, 327)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
@@ -512,6 +512,7 @@ Partial Class Form1
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -542,7 +543,7 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

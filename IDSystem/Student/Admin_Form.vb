@@ -343,6 +343,11 @@ Public Class Admin_Form
     End Sub
 
     Private Sub addToPrintQueueBtn_Click(sender As Object, e As EventArgs) Handles addToPrintQueueBtn.Click
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+            Exit Sub
+        End If
+
         If pi_tp_dgv.Rows.Count >= 10 Then
             MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
         Else
@@ -454,9 +459,7 @@ Public Class Admin_Form
                 Next
                 cmd.Dispose()
                 DB.student_to_print_conn.Close()
-
                 loadPIPrintQueue()
-                MsgBox("Successfully removed from print queue")
             End If
         Else
             MsgBox("Select a queue")
@@ -478,7 +481,6 @@ Public Class Admin_Form
                 End Using
                 DB.student_to_print_conn.Close()
                 loadPIPrintQueue()
-                MsgBox("Print queue cleared out")
             End If
         Else
             MsgBox("No queue to clear")
