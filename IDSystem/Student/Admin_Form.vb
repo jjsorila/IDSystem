@@ -693,13 +693,19 @@ Public Class Admin_Form
         If uid_update_validity.SelectedIndex = 0 Then
             MsgBox("Select validity")
         Else
-            DB.student_data_conn.Open()
-            Using cmd As New OleDbCommand($"UPDATE students SET s_validity='{uid_update_validity.Text}'", DB.student_data_conn)
-                cmd.ExecuteNonQuery()
-            End Using
-            DB.student_data_conn.Close()
-            UIDClearInput()
-            MsgBox("Updated successfully")
+            Try
+                DB.student_data_conn.Open()
+                Using cmd As New OleDbCommand($"UPDATE students SET s_validity='{uid_update_validity.Text}',id_release_count=0", DB.student_data_conn)
+                    cmd.ExecuteNonQuery()
+                End Using
+                DB.student_data_conn.Close()
+                UIDClearInput()
+                loadPIStudents()
+                loadUSIData()
+                MsgBox("Updated successfully")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         End If
     End Sub
 
