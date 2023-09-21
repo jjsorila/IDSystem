@@ -517,46 +517,47 @@ Public Class Admin_Form
     End Sub
 
     Private Sub printBtn_Click(sender As Object, e As EventArgs) Handles printBtn.Click
-        Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
         printBtn.Enabled = False
+        Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
 
         If IsAccessRunning() Then
             MsgBox("Please close all opened MS ACCESS app")
-        ElseIf rows.Count <= 0 Then
-            MsgBox("No data to print")
         Else
-            Try
-                globalAccessApp.OpenCurrentDatabase($"{Windows.Forms.Application.StartupPath}\Student_To_Print.accdb", False, "")
-            Catch ex As Exception
+            If rows.Count <= 0 Then
+                MsgBox("No data to print")
+            Else
+                If MsgBox("Is the printer ready and physically connected?", MsgBoxStyle.YesNo) = DialogResult.Yes Then
+                    Try
+                        globalAccessApp.OpenCurrentDatabase($"{Windows.Forms.Application.StartupPath}\Student_To_Print.accdb", False, "")
+                    Catch ex As Exception
 
-            End Try
+                    End Try
 
-            Dim printDialog As New PrintDialog()
-            printDialog.AllowSomePages = True
+                    If PrinterList.ShowDialog() = DialogResult.OK Then
+                        Dim selectedPrinter As String = PrinterList.PrinterSettings.PrinterName
 
-            If printDialog.ShowDialog() = DialogResult.OK Then
-                Dim selectedPrinter As String = printDialog.PrinterSettings.PrinterName
+                        Dim strAccReport As String = "to_print"
 
-                Dim strAccReport As String = "to_print"
+                        globalAccessApp.Visible = False
 
-                globalAccessApp.Visible = False
+                        globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
 
-                globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
+                        globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
 
-                globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
+                        globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
 
-                globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
+                        DB.student_data_conn.Open()
 
-                DB.student_data_conn.Open()
-                Dim isFound As Boolean = False
-                For Each row As DataGridViewRow In rows
-                    Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells("Student_Number").Value}'", DB.student_data_conn)
-                        cmdUpdate.ExecuteNonQuery()
-                    End Using
-                Next
-                DB.student_data_conn.Close()
+                        For Each row As DataGridViewRow In rows
+                            Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells("Student_Number").Value}'", DB.student_data_conn)
+                                cmdUpdate.ExecuteNonQuery()
+                            End Using
+                        Next
+                        DB.student_data_conn.Close()
 
-                afterPrint()
+                        afterPrint()
+                    End If
+                End If
             End If
         End If
 
