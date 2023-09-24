@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Microsoft.Office.Interop.Access
 
 Public Class Admin_Form
@@ -131,7 +132,7 @@ Public Class Admin_Form
                     isSignatureUploaded = 1
                 End Using
             End Using
-            End Using
+        End Using
     End Sub
 
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
@@ -623,12 +624,22 @@ Public Class Admin_Form
         If uid_add_validity.Text = Nothing Or uid_add_validity.Text = "" Then
             MsgBox("No input detected")
         Else
+            Dim isFound As Boolean = False
+            For Each validityItem As DataRowView In uid_validity.Items
+                If validityItem.Item(0).ToString = uid_add_validity.Text Then
+                    isFound = True
+                End If
+            Next
+            If isFound Then
+                MsgBox("Validity already added")
+                Exit Sub
+            End If
+
             DB.student_id_details_conn.Open()
             Using cmd As New OleDbCommand($"INSERT INTO validity VALUES('{uid_add_validity.Text}')", DB.student_id_details_conn)
                 cmd.ExecuteNonQuery()
             End Using
             DB.student_id_details_conn.Close()
-            Form1.loadComboBox()
             loadUIDComboBox()
             loadPIComboBox()
             loadUSIComboBox()
@@ -641,6 +652,17 @@ Public Class Admin_Form
         If uid_add_course.Text = Nothing Or uid_add_course.Text = "" Then
             MsgBox("No input detected")
         Else
+            Dim isFound As Boolean = False
+            For Each courseItem As DataRowView In uid_course.Items
+                If courseItem.Item(0).ToString.ToLower = uid_add_course.Text.ToLower Then
+                    isFound = True
+                End If
+            Next
+            If isFound Then
+                MsgBox("Course already added")
+                Exit Sub
+            End If
+
             DB.student_id_details_conn.Open()
             Using cmd As New OleDbCommand($"INSERT INTO courses VALUES('{uid_add_course.Text}')", DB.student_id_details_conn)
                 cmd.ExecuteNonQuery()
@@ -664,7 +686,6 @@ Public Class Admin_Form
                 cmd.ExecuteNonQuery()
             End Using
             DB.student_id_details_conn.Close()
-            Form1.loadComboBox()
             loadUIDComboBox()
             loadPIComboBox()
             loadUSIComboBox()
@@ -684,6 +705,8 @@ Public Class Admin_Form
             DB.student_id_details_conn.Close()
             Form1.loadComboBox()
             loadUIDComboBox()
+            loadPIComboBox()
+            loadUSIComboBox()
             UIDClearInput()
             MsgBox("Deleted successfully")
         End If

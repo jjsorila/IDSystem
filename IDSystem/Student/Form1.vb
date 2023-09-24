@@ -18,14 +18,10 @@ Public Class Form1
 
     Public Sub loadComboBox()
         Dim adpt_course As New OleDbDataAdapter("SELECT * FROM courses", DB.student_id_details_conn)
-        Dim adpt_validity As New OleDbDataAdapter("SELECT * FROM validity", DB.student_id_details_conn)
-        Dim dt_course, dt_validity As New DataTable
+        Dim dt_course As New DataTable
         adpt_course.Fill(dt_course)
-        adpt_validity.Fill(dt_validity)
         course.DataSource = dt_course
-        validity.DataSource = dt_validity
         course.DisplayMember = "course_list"
-        validity.DisplayMember = "validity_list"
     End Sub
 
     Public Sub ResizeSaveSignature(img As Image, filename As String)
@@ -64,7 +60,6 @@ Public Class Form1
         student_search.Clear()
         year.Text = Nothing
         course.Text = Nothing
-        validity.Text = Nothing
         s_number.Clear()
         id_picture.Image = My.Resources.placeholder
         id_signature.Image = My.Resources.id_signature_placeholder
@@ -122,9 +117,6 @@ Public Class Form1
             course.SelectedIndex = 0 Or
             course.Text = "" Or
             course.Text = Nothing Or
-            validity.SelectedIndex = 0 Or
-            validity.Text = "" Or
-            validity.Text = Nothing Or
             isIdUploaded = 0 Or
             isSignatureUploaded = 0) Then
             MsgBox("Please complete all input", MsgBoxStyle.OkOnly)
@@ -140,6 +132,16 @@ Public Class Form1
                     If Not mi.Text = Nothing Or Not mi.Text = "" Then
                         modifiedMi = $"{mi.Text}."
                     End If
+
+                    Dim new_sy As New Date(Date.Now.Year, 7, 1)
+                    Dim curr_year As Integer = Date.Now.Year
+                    Dim setValidity As String
+                    If Date.Now < new_sy Then
+                        setValidity = $"{curr_year - 1}-{(curr_year).ToString.Substring(curr_year.ToString.Length - 2)}"
+                    Else
+                        setValidity = $"{curr_year}-{(curr_year + 1).ToString.Substring((curr_year + 1).ToString.Length - 2)}"
+                    End If
+
                     DB.student_data_conn.Open()
 
                     'Insert record
@@ -154,7 +156,7 @@ Public Class Form1
                             .Parameters.AddWithValue("@eperson", e_person.Text)
                             .Parameters.AddWithValue("@syear", year.Text)
                             .Parameters.AddWithValue("@scourse", course.Text)
-                            .Parameters.AddWithValue("@svalidity", validity.Text)
+                            .Parameters.AddWithValue("@svalidity", setValidity)
                             .ExecuteNonQuery()
                         End With
                     End Using
