@@ -149,6 +149,7 @@ Public Class Admin_Form
                 My.Computer.FileSystem.DeleteFile($"{Windows.Forms.Application.StartupPath}\student_signatures\{record_number}.png")
                 clearUSIInput()
                 loadUSIData()
+                loadPIStudents()
                 MsgBox("Student Record Deleted", MsgBoxStyle.OkOnly)
             End If
         End If
@@ -202,6 +203,7 @@ Public Class Admin_Form
                     ResizeSaveSignature(usi_id_signature.Image, $"{record_number}.png")
                     clearUSIInput()
                     loadUSIData()
+                    loadPIStudents()
                     MsgBox("Record Updated", MsgBoxStyle.OkOnly)
                 End If
             End If
