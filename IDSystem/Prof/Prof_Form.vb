@@ -68,7 +68,7 @@ Public Class Prof_Form
         End Using
     End Sub
     Private Sub Prof_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        CleanupWorker.RunWorkerAsync()
+        ProfCleanupWorker.RunWorkerAsync()
         Home.Show()
     End Sub
 
@@ -141,25 +141,6 @@ Public Class Prof_Form
         If hidden_employee_number = Nothing Then
             updateBtn.Enabled = False
         End If
-    End Sub
-
-    Private Sub CleanupWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles CleanupWorker.DoWork
-        Try
-            'globalAccessApp.CloseCurrentDatabase()
-            'globalAccessApp.Quit(AcQuitOption.acQuitSaveAll)
-        Catch ex As Exception
-
-        Finally
-            'If globalAccessApp IsNot Nothing Then
-            '    System.Runtime.InteropServices.Marshal.ReleaseComObject(globalAccessApp)
-            '    globalAccessApp = Nothing
-            'End If
-            For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
-                process.Kill()
-            Next
-            Me.Dispose()
-            Me.Close()
-        End Try
     End Sub
 
     Private Sub dgv_usi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_usi.CellClick
@@ -337,4 +318,23 @@ Public Class Prof_Form
     Public isPIHasRun As Boolean = False
     Public piSelect As String = Nothing
     Dim globalAccessApp As New Microsoft.Office.Interop.Access.Application()
+
+    Private Sub ProfCleanupWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles ProfCleanupWorker.DoWork
+        Try
+            'globalAccessApp.CloseCurrentDatabase()
+            'globalAccessApp.Quit(AcQuitOption.acQuitSaveAll)
+        Catch ex As Exception
+
+        Finally
+            'If globalAccessApp IsNot Nothing Then
+            '    System.Runtime.InteropServices.Marshal.ReleaseComObject(globalAccessApp)
+            '    globalAccessApp = Nothing
+            'End If
+            For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
+                process.Kill()
+            Next
+            Me.Dispose()
+            Me.Close()
+        End Try
+    End Sub
 End Class
