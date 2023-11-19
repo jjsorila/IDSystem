@@ -87,6 +87,36 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prof\Prof_Camera_Form.Designer.vb">
+      <DependentUpon>Prof_Camera_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prof\Prof_Camera_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prof\Prof_Form.Designer.vb">
+      <DependentUpon>Prof_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prof\Prof_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prof\Prof_Select_Photo_Source.Designer.vb">
+      <DependentUpon>Prof_Select_Photo_Source.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prof\Prof_Select_Photo_Source.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prof\Prof_Signpad_Form.Designer.vb">
+      <DependentUpon>Prof_Signpad_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prof\Prof_Signpad_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Student\Admin_Camera_Form.Designer.vb">
       <DependentUpon>Admin_Camera_Form.vb</DependentUpon>
     </Compile>
@@ -167,6 +197,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prof\Prof_Camera_Form.resx">
+      <DependentUpon>Prof_Camera_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prof\Prof_Form.resx">
+      <DependentUpon>Prof_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prof\Prof_Select_Photo_Source.resx">
+      <DependentUpon>Prof_Select_Photo_Source.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prof\Prof_Signpad_Form.resx">
+      <DependentUpon>Prof_Signpad_Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\Admin_Camera_Form.resx">
       <DependentUpon>Admin_Camera_Form.vb</DependentUpon>
     </EmbeddedResource>

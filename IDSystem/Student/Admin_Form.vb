@@ -38,7 +38,7 @@ Public Class Admin_Form
         address.Clear()
         record_number = Nothing
         id_count_label.Text = Nothing
-        id_validity_label.Text = Nothing
+        date_updated_label.Text = Nothing
     End Sub
 
     Public Sub loadUSIComboBox()
@@ -121,7 +121,7 @@ Public Class Admin_Form
                 usi_year.Text = currentRow("s_year")
                 usi_course.Text = currentRow("s_course")
                 s_number.Text = currentRow("s_number")
-                id_validity_label.Text = currentRow("s_validity")
+                date_updated_label.Text = currentRow("date_updated")
                 id_count_label.Text = currentRow("id_release_count")
                 Using fsID As New IO.FileStream($"{Windows.Forms.Application.StartupPath}\student_pictures\{record_number}.jpg", IO.FileMode.Open, IO.FileAccess.Read)
                     usi_id_picture.Image = System.Drawing.Image.FromStream(fsID)
@@ -170,7 +170,7 @@ Public Class Admin_Form
                 isIdUploaded = 0 Or
                 isSignatureUploaded = 0 Then
 
-                MsgBox("Please complete all input", MsgBoxStyle.OkOnly)
+                MsgBox("Please complete all inputs", MsgBoxStyle.OkOnly)
             Else
                 If MsgBox("Are you sure you want to update this record?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                     Dim modifiedMi As String = ""
@@ -760,8 +760,5 @@ Public Class Admin_Form
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         Change_PIN.Show()
-    End Sub
-
-    Private Sub AfterPrintWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
     End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class Admin_Creds
     Dim DB As New Connection
+    Public toProfIdForm As Boolean = False
 
     Public Sub clearInput()
         pinTxt.Clear()
@@ -15,9 +16,14 @@ Public Class Admin_Creds
             Using dt As New DataTable
                 adpt.Fill(dt)
                 If (dt.Rows.Count >= 1) Then
-                    Form1.isAdminFormOpen = True
                     Me.Close()
-                    Admin_Form.Show()
+                    If toProfIdForm Then
+                        Prof_Form.Show()
+                        Home.Hide()
+                    Else
+                        Form1.isAdminFormOpen = True
+                        Admin_Form.Show()
+                    End If
                 Else
                     MsgBox("Incorrect PIN")
                 End If

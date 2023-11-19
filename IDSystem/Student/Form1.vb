@@ -203,25 +203,24 @@ Public Class Form1
         If isAdminFormOpen Then
             MsgBox("Admin Form is already open")
         Else
+            Admin_Creds.toProfIdForm = False
             Admin_Creds.Show()
         End If
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If MsgBox("Do you want to exit the application?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Try
-                For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
-                    process.Kill()
-                Next
-            Catch ex As Exception
+        Try
+            For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
+                process.Kill()
+            Next
+        Catch ex As Exception
 
-            Finally
-                Me.Dispose()
-                End
-            End Try
-        Else
-            e.Cancel = True
-        End If
+        Finally
+            Home.Show()
+            Me.Dispose()
+            Me.Close()
+            Admin_Form.Close()
+        End Try
     End Sub
 
     Private Sub refreshBtn_Click(sender As Object, e As EventArgs) Handles refreshBtn.Click

@@ -132,7 +132,7 @@
     <value>NoControl</value>
   </data>
   <data name="usi_refreshData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 91</value>
+    <value>30, 86</value>
   </data>
   <data name="usi_refreshData.Size" type="System.Drawing.Size, System.Drawing">
     <value>380, 39</value>
@@ -160,7 +160,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="studentSearchUSI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 45</value>
+    <value>113, 40</value>
   </data>
   <data name="studentSearchUSI.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 30</value>
@@ -187,7 +187,7 @@
     <value>43</value>
   </data>
   <data name="dgv_usi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 148</value>
+    <value>30, 143</value>
   </data>
   <data name="dgv_usi.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
@@ -217,7 +217,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 48</value>
+    <value>26, 43</value>
   </data>
   <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 23</value>
@@ -303,34 +303,34 @@
   <data name="&gt;&gt;id_count_label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="id_validity_label.AutoSize" type="System.Boolean, mscorlib">
+  <data name="date_updated_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="id_validity_label.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="date_updated_label.Font" type="System.Drawing.Font, System.Drawing">
     <value>Comic Sans MS, 14pt, style=Bold</value>
   </data>
-  <data name="id_validity_label.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="date_updated_label.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="id_validity_label.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 180</value>
+  <data name="date_updated_label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 180</value>
   </data>
-  <data name="id_validity_label.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="date_updated_label.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 27</value>
   </data>
-  <data name="id_validity_label.TabIndex" type="System.Int32, mscorlib">
+  <data name="date_updated_label.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="&gt;&gt;id_validity_label.Name" xml:space="preserve">
-    <value>id_validity_label</value>
+  <data name="&gt;&gt;date_updated_label.Name" xml:space="preserve">
+    <value>date_updated_label</value>
   </data>
-  <data name="&gt;&gt;id_validity_label.Type" xml:space="preserve">
+  <data name="&gt;&gt;date_updated_label.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;id_validity_label.Parent" xml:space="preserve">
+  <data name="&gt;&gt;date_updated_label.Parent" xml:space="preserve">
     <value>GroupBox7</value>
   </data>
-  <data name="&gt;&gt;id_validity_label.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;date_updated_label.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="Label15.AutoSize" type="System.Boolean, mscorlib">
@@ -379,13 +379,13 @@
     <value>35, 180</value>
   </data>
   <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 27</value>
+    <value>144, 27</value>
   </data>
   <data name="Label11.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="Label11.Text" xml:space="preserve">
-    <value>ID Validity:</value>
+    <value>Last Updated:</value>
   </data>
   <data name="&gt;&gt;Label11.Name" xml:space="preserve">
     <value>Label11</value>
@@ -2182,10 +2182,10 @@
     <value>Comic Sans MS, 10pt, style=Bold</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 23</value>
+    <value>170, 23</value>
   </data>
   <data name="ToolStripMenuItem1.Text" xml:space="preserve">
-    <value>CHANGE STUDENT ADMIN PIN</value>
+    <value>CHANGE ADMIN PIN</value>
   </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

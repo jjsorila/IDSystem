@@ -9,8 +9,8 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\bin\Debug\AForge.xml
 C:\Users\JJS\Desktop\IDSystem\IDSystem\bin\Debug\AForge.Video.xml
 C:\Users\JJS\Desktop\IDSystem\IDSystem\bin\Debug\AForge.Video.DirectShow.xml
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.AssemblyReference.cache
-C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.SuggestedBindingRedirects.cache
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.ResolveComReference.cache
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Home.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Camera_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Creds.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Form.resources
@@ -28,3 +28,7 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.CopyComplete
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.exe
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.xml
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.pdb
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Form.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Camera_Form.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Select_Photo_Source.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Signpad_Form.resources

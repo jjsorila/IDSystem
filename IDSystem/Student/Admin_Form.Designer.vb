@@ -41,7 +41,7 @@ Partial Class Admin_Form
         Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.id_count_label = New System.Windows.Forms.Label()
-        Me.id_validity_label = New System.Windows.Forms.Label()
+        Me.date_updated_label = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.updateBtn = New System.Windows.Forms.Button()
@@ -227,7 +227,7 @@ Partial Class Admin_Form
         '
         Me.GroupBox7.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox7.Controls.Add(Me.id_count_label)
-        Me.GroupBox7.Controls.Add(Me.id_validity_label)
+        Me.GroupBox7.Controls.Add(Me.date_updated_label)
         Me.GroupBox7.Controls.Add(Me.Label15)
         Me.GroupBox7.Controls.Add(Me.Label11)
         Me.GroupBox7.Controls.Add(Me.updateBtn)
@@ -249,10 +249,10 @@ Partial Class Admin_Form
         resources.ApplyResources(Me.id_count_label, "id_count_label")
         Me.id_count_label.Name = "id_count_label"
         '
-        'id_validity_label
+        'date_updated_label
         '
-        resources.ApplyResources(Me.id_validity_label, "id_validity_label")
-        Me.id_validity_label.Name = "id_validity_label"
+        resources.ApplyResources(Me.date_updated_label, "date_updated_label")
+        Me.date_updated_label.Name = "date_updated_label"
         '
         'Label15
         '
@@ -941,7 +941,7 @@ Partial Class Admin_Form
     Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents CleanupWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents id_count_label As Label
-    Friend WithEvents id_validity_label As Label
+    Friend WithEvents date_updated_label As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
