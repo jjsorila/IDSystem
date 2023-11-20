@@ -532,7 +532,7 @@ Public Class Prof_Form
 
     Public Async Sub afterPrint()
         Try
-            Await DB.student_to_print_conn.OpenAsync()
+            Await DB.prof_to_print_conn.OpenAsync()
             Using cmdDelete As New OleDbCommand("DELETE FROM to_print", DB.prof_to_print_conn)
                 Await cmdDelete.ExecuteNonQueryAsync()
             End Using
@@ -542,7 +542,7 @@ Public Class Prof_Form
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            DB.student_to_print_conn.Close()
+            DB.prof_to_print_conn.Close()
             MsgBox("Print started")
         End Try
     End Sub
