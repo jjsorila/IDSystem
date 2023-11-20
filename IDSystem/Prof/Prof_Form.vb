@@ -320,6 +320,7 @@ Public Class Prof_Form
                 My.Computer.FileSystem.DeleteFile($"{Windows.Forms.Application.StartupPath}\prof_signatures\{hidden_employee_number}.png")
                 clearUSIInput()
                 loadUSIData()
+                loadPIStudents()
             End If
         End If
     End Sub
@@ -565,7 +566,7 @@ Public Class Prof_Form
             Exit Sub
         End If
 
-        If pi_tp_dgv.Rows.Count >= 5 Then
+        If pi_tp_dgv.Rows.Count >= 8 Then
             MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
         Else
             If piSelect = Nothing Then

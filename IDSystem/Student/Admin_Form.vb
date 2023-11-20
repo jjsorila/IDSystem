@@ -326,6 +326,12 @@ Public Class Admin_Form
 
     Private Sub TabPage3_Enter(sender As Object, e As EventArgs) Handles TabPage3.Enter
         If Not isPIHasRun Then
+            Using adpt As New OleDbDataAdapter("SELECT TOP 1 s_validity FROM students", DB.student_data_conn)
+                Using dt As New DataTable
+                    adpt.Fill(dt)
+                    id_validity_indicator.Text = $"Current ID Validity: {dt.Rows(0)("s_validity").ToString}"
+                End Using
+            End Using
             loadPIStudents()
             loadPIComboBox()
             loadPIPrintQueue()
@@ -421,8 +427,8 @@ Public Class Admin_Form
                             .Parameters.AddWithValue("@mi", mi)
                             .Parameters.AddWithValue("@lname", UCase(lname))
                             .Parameters.AddWithValue("@address", StrReverse(address))
-                            .Parameters.AddWithValue("@e_person", StrReverse(e_person))
                             .Parameters.AddWithValue("@e_number", StrReverse(e_number))
+                            .Parameters.AddWithValue("@e_person", StrReverse(e_person))
                             .Parameters.AddWithValue("@picture", idPicture)
                             .Parameters.AddWithValue("@signature", idSignature)
                             .Parameters.AddWithValue("@s_year", StrReverse(s_year))
@@ -724,6 +730,7 @@ Public Class Admin_Form
                     cmd.ExecuteNonQuery()
                 End Using
                 DB.student_data_conn.Close()
+                id_validity_indicator.Text = $"Current ID Validity: {uid_update_validity.Text}"
                 UIDClearInput()
                 loadPIStudents()
                 loadUSIData()
@@ -756,9 +763,5 @@ Public Class Admin_Form
             Next
             Me.Dispose()
         End Try
-    End Sub
-
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        Change_PIN.Show()
     End Sub
 End Class

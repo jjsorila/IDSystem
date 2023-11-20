@@ -91,6 +91,7 @@ Partial Class Admin_Form
         Me.previewBtn = New System.Windows.Forms.Button()
         Me.modifyBtn = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.id_validity_indicator = New System.Windows.Forms.Label()
         Me.pi_refreshBtn = New System.Windows.Forms.Button()
         Me.pi_dgv = New System.Windows.Forms.DataGridView()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
@@ -102,8 +103,6 @@ Partial Class Admin_Form
         Me.Label1 = New System.Windows.Forms.Label()
         Me.addToPrintQueueBtn = New System.Windows.Forms.Button()
         Me.CleanupWorker = New System.ComponentModel.BackgroundWorker()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrinterList = New System.Windows.Forms.PrintDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -124,7 +123,6 @@ Partial Class Admin_Form
         Me.GroupBox3.SuspendLayout()
         CType(Me.pi_dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -686,6 +684,7 @@ Partial Class Admin_Form
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.id_validity_indicator)
         Me.GroupBox3.Controls.Add(Me.pi_refreshBtn)
         Me.GroupBox3.Controls.Add(Me.pi_dgv)
         Me.GroupBox3.Controls.Add(Me.GroupBox9)
@@ -695,6 +694,11 @@ Partial Class Admin_Form
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.TabStop = False
+        '
+        'id_validity_indicator
+        '
+        resources.ApplyResources(Me.id_validity_indicator, "id_validity_indicator")
+        Me.id_validity_indicator.Name = "id_validity_indicator"
         '
         'pi_refreshBtn
         '
@@ -812,20 +816,6 @@ Partial Class Admin_Form
         'CleanupWorker
         '
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.DarkGreen
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
-        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
-        Me.MenuStrip1.Name = "MenuStrip1"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.BackColor = System.Drawing.Color.LightGreen
-        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        '
         'PrinterList
         '
         Me.PrinterList.AllowSomePages = True
@@ -837,9 +827,7 @@ Partial Class Admin_Form
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "Admin_Form"
         Me.TabControl1.ResumeLayout(False)
@@ -864,13 +852,11 @@ Partial Class Admin_Form
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.pi_tp_dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         CType(Me.pi_dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -944,7 +930,6 @@ Partial Class Admin_Form
     Friend WithEvents date_updated_label As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PrinterList As PrintDialog
+    Friend WithEvents id_validity_indicator As Label
 End Class

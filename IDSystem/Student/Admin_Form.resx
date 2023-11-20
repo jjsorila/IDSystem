@@ -1782,6 +1782,39 @@
   <data name="&gt;&gt;GroupBox4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="id_validity_indicator.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="id_validity_indicator.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Comic Sans MS, 14pt, style=Bold</value>
+  </data>
+  <data name="id_validity_indicator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="id_validity_indicator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 280</value>
+  </data>
+  <data name="id_validity_indicator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 27</value>
+  </data>
+  <data name="id_validity_indicator.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="id_validity_indicator.Text" xml:space="preserve">
+    <value>Current ID Validity:</value>
+  </data>
+  <data name="&gt;&gt;id_validity_indicator.Name" xml:space="preserve">
+    <value>id_validity_indicator</value>
+  </data>
+  <data name="&gt;&gt;id_validity_indicator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;id_validity_indicator.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;id_validity_indicator.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="pi_refreshBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1813,19 +1846,19 @@
     <value>GroupBox3</value>
   </data>
   <data name="&gt;&gt;pi_refreshBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pi_dgv.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
   <data name="pi_dgv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 281</value>
+    <value>14, 316</value>
   </data>
   <data name="pi_dgv.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="pi_dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 407</value>
+    <value>429, 372</value>
   </data>
   <data name="pi_dgv.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1840,7 +1873,7 @@
     <value>GroupBox3</value>
   </data>
   <data name="&gt;&gt;pi_dgv.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pi_year.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -2059,7 +2092,7 @@
     <value>GroupBox3</value>
   </data>
   <data name="&gt;&gt;GroupBox9.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="addToPrintQueueBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2092,7 +2125,7 @@
     <value>GroupBox3</value>
   </data>
   <data name="&gt;&gt;addToPrintQueueBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="GroupBox3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Comic Sans MS, 14pt, style=Bold</value>
@@ -2152,7 +2185,7 @@
     <value>Comic Sans MS, 11.25pt, style=Bold</value>
   </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 34</value>
+    <value>9, 19</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>960, 763</value>
@@ -2175,45 +2208,6 @@
   <metadata name="CleanupWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 27</value>
   </metadata>
-  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>169, 27</value>
-  </metadata>
-  <data name="ToolStripMenuItem1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 10pt, style=Bold</value>
-  </data>
-  <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 23</value>
-  </data>
-  <data name="ToolStripMenuItem1.Text" xml:space="preserve">
-    <value>CHANGE ADMIN PIN</value>
-  </data>
-  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 0, 2</value>
-  </data>
-  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 27</value>
-  </data>
-  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="MenuStrip1.Text" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="PrinterList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>297, 25</value>
   </metadata>
@@ -2243,12 +2237,6 @@
   </data>
   <data name="&gt;&gt;CleanupWorker.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripMenuItem1.Name" xml:space="preserve">
-    <value>ToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;ToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PrinterList.Name" xml:space="preserve">
     <value>PrinterList</value>
