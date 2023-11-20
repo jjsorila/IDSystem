@@ -27,7 +27,6 @@ Partial Class Form1
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.register_btn = New System.Windows.Forms.Button()
         Me.clear_btn = New System.Windows.Forms.Button()
@@ -58,8 +57,9 @@ Partial Class Form1
         Me.student_search = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -67,14 +67,16 @@ Partial Class Form1
         CType(Me.id_picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = Global.IDSystem.My.Resources.Resources.logo_1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Location = New System.Drawing.Point(155, 16)
+        Me.PictureBox1.Location = New System.Drawing.Point(181, 42)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(105, 105)
@@ -87,27 +89,13 @@ Partial Class Form1
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(349, 41)
+        Me.Label1.Location = New System.Drawing.Point(375, 67)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(478, 56)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "INTERNATIONAL ELECTRONICS AND" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TECHNICAL INSTITUTE, INC."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 9)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(937, 133)
-        Me.GroupBox1.TabIndex = 1
-        Me.GroupBox1.TabStop = False
         '
         'GroupBox2
         '
@@ -504,6 +492,26 @@ Partial Class Form1
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "SEARCH:"
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.DarkGreen
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(980, 27)
+        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Yellow
+        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(56, 23)
+        Me.ToolStripMenuItem2.Text = "HELP"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -512,10 +520,12 @@ Partial Class Form1
         Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(980, 807)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -524,8 +534,6 @@ Partial Class Form1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "College Student ID Form"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -536,12 +544,14 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
@@ -572,4 +582,6 @@ Partial Class Form1
     Friend WithEvents register_btn As Button
     Friend WithEvents clear_btn As Button
     Friend WithEvents refreshBtn As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
 End Class

@@ -22,6 +22,46 @@ IDSystem
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:IDSystem.My.Resources.Resources.A">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.A1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.A2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.A3">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.A4">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.B1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.B2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.B3">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:IDSystem.My.Resources.Resources.cancel_btn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -52,6 +92,16 @@ IDSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:IDSystem.My.Resources.Resources.P1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.P2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:IDSystem.My.Resources.Resources.placeholder">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -63,6 +113,11 @@ IDSystem
 </summary>
 </member>
 <member name="P:IDSystem.My.Resources.Resources.upload_front_placeholder">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:IDSystem.My.Resources.Resources.warning">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

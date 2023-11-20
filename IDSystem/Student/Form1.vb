@@ -216,6 +216,9 @@ Public Class Form1
         Catch ex As Exception
 
         Finally
+            Help.Close()
+            Select_Photo_Source.Close()
+            Signpad_Form.Close()
             Home.Show()
             Me.Dispose()
             Me.Close()
@@ -226,5 +229,9 @@ Public Class Form1
     Private Sub refreshBtn_Click(sender As Object, e As EventArgs) Handles refreshBtn.Click
         loadData()
         MsgBox("Data Refreshed")
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Help.Show()
     End Sub
 End Class

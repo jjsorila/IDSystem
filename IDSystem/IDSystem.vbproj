@@ -105,6 +105,12 @@
     <Compile Include="Prof\Prof_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Prof\Prof_Help.Designer.vb">
+      <DependentUpon>Prof_Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prof\Prof_Help.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Prof\Prof_Select_Photo_Source.Designer.vb">
       <DependentUpon>Prof_Select_Photo_Source.vb</DependentUpon>
     </Compile>
@@ -133,6 +139,12 @@
       <DependentUpon>Admin_Form.vb</DependentUpon>
     </Compile>
     <Compile Include="Student\Admin_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Admin_Help.Designer.vb">
+      <DependentUpon>Admin_Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Admin_Help.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student\Admin_Select_Photo_Source.Designer.vb">
@@ -183,6 +195,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Student\Help.Designer.vb">
+      <DependentUpon>Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Help.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Student\Select_Photo_Source.Designer.vb">
       <DependentUpon>Select_Photo_Source.vb</DependentUpon>
     </Compile>
@@ -206,6 +224,9 @@
     <EmbeddedResource Include="Prof\Prof_Form.resx">
       <DependentUpon>Prof_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prof\Prof_Help.resx">
+      <DependentUpon>Prof_Help.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prof\Prof_Select_Photo_Source.resx">
       <DependentUpon>Prof_Select_Photo_Source.vb</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Admin_Form.resx">
       <DependentUpon>Admin_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Admin_Help.resx">
+      <DependentUpon>Admin_Help.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Admin_Select_Photo_Source.resx">
       <DependentUpon>Admin_Select_Photo_Source.vb</DependentUpon>
@@ -241,6 +265,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Help.resx">
+      <DependentUpon>Help.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Select_Photo_Source.resx">
       <DependentUpon>Select_Photo_Source.vb</DependentUpon>
@@ -270,6 +297,14 @@
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
     </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
@@ -307,6 +342,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -336,6 +380,38 @@
   <ItemGroup>
     <None Include="Resources\capture_btn.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\B1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A4.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -104,6 +104,8 @@ Partial Class Admin_Form
         Me.addToPrintQueueBtn = New System.Windows.Forms.Button()
         Me.CleanupWorker = New System.ComponentModel.BackgroundWorker()
         Me.PrinterList = New System.Windows.Forms.PrintDialog()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -123,6 +125,7 @@ Partial Class Admin_Form
         Me.GroupBox3.SuspendLayout()
         CType(Me.pi_dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -821,11 +824,26 @@ Partial Class Admin_Form
         Me.PrinterList.AllowSomePages = True
         Me.PrinterList.UseEXDialog = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.DarkGreen
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Yellow
+        resources.ApplyResources(Me.ToolStripMenuItem2, "ToolStripMenuItem2")
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        '
         'Admin_Form
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
@@ -856,7 +874,10 @@ Partial Class Admin_Form
         CType(Me.pi_dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -932,4 +953,6 @@ Partial Class Admin_Form
     Friend WithEvents Label11 As Label
     Friend WithEvents PrinterList As PrintDialog
     Friend WithEvents id_validity_indicator As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
 End Class

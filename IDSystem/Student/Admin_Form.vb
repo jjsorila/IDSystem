@@ -744,6 +744,9 @@ Public Class Admin_Form
     'CLEANUP WORK==================================================================================================================================================
     Private Sub Admin_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Form1.isAdminFormOpen = False
+        Admin_Select_Photo_Source.Close()
+        Admin_Signpad_Form.Close()
+        Admin_Help.Close()
         CleanupWorker.RunWorkerAsync()
     End Sub
 
@@ -763,5 +766,9 @@ Public Class Admin_Form
             Next
             Me.Dispose()
         End Try
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Admin_Help.Show()
     End Sub
 End Class

@@ -32,3 +32,10 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Camera_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Select_Photo_Source.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Signpad_Form.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Help.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Help.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Help.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\bin\Debug\Interop.WMPLib.dll
+C:\Users\JJS\Desktop\IDSystem\IDSystem\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\Interop.WMPLib.dll
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\AxInterop.WMPLib.dll

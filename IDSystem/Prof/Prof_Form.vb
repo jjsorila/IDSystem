@@ -68,6 +68,9 @@ Public Class Prof_Form
         End Using
     End Sub
     Private Sub Prof_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Prof_Help.Close()
+        Prof_Select_Photo_Source.Close()
+        Prof_Signpad_Form.Close()
         ProfCleanupWorker.RunWorkerAsync()
         Home.Show()
     End Sub
@@ -639,5 +642,9 @@ Public Class Prof_Form
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Prof_Help.Show()
     End Sub
 End Class
