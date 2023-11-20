@@ -232,7 +232,7 @@ Public Class Prof_Form
                     ResizeSaveSignature(usi_id_signature.Image, sign_name)
                     clearUSIInput()
                     loadUSIData()
-                    'loadPIStudents()
+                    loadPIStudents()
                     MsgBox("Record updated", MsgBoxStyle.OkOnly)
                 End If
             End If
@@ -253,6 +253,16 @@ Public Class Prof_Form
                 position.Text = Nothing Then
             MsgBox("Please complete all inputs", MsgBoxStyle.OkOnly)
         Else
+            Using adpt As New OleDbDataAdapter($"SELECT employee_number FROM prof_data WHERE employee_number='{employee_number.Text}'", DB.prof_conn)
+                Using dt As New DataTable
+                    adpt.Fill(dt)
+                    If dt.Rows.Count >= 1 Then
+                        MsgBox("Employee number already exists")
+                        Exit Sub
+                    End If
+                End Using
+            End Using
+
             If MsgBox("Are these inputs correct?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 Dim modifiedMi As String = ""
                 If Not mi.Text = Nothing Or Not mi.Text = "" Then
@@ -287,7 +297,7 @@ Public Class Prof_Form
                 ResizeSaveSignature(usi_id_signature.Image, sign_name)
                 clearUSIInput()
                 loadUSIData()
-                'loadPIStudents()
+                loadPIStudents()
                 MsgBox("Record added", MsgBoxStyle.OkOnly)
             End If
         End If
@@ -319,22 +329,314 @@ Public Class Prof_Form
     Public piSelect As String = Nothing
     Dim globalAccessApp As New Microsoft.Office.Interop.Access.Application()
 
+    Public Sub loadPIPrintQueue()
+        pi_tp_dgv.DefaultCellStyle.ForeColor = Color.Black
+        Using adpt As New OleDbDataAdapter("SELECT employee_number AS Employee_No,lname & ', ' & fname & ' ' & mi AS Full_Name FROM to_print", DB.prof_to_print_conn)
+            Using dt As New DataTable
+                adpt.Fill(dt)
+                pi_tp_dgv.DataSource = dt
+            End Using
+        End Using
+    End Sub
+
+    Public Sub loadPIStudents(Optional query As String = "SELECT TOP 20 Full_Name FROM employee_search ORDER BY Full_Name ASC")
+        pi_dgv.DefaultCellStyle.ForeColor = Color.Black
+
+        Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
+            Using dt As New DataTable
+                adpt.Fill(dt)
+                pi_dgv.DataSource = dt
+                pi_dgv.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                'pi_dgv.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            End Using
+        End Using
+
+    End Sub
+
+    Public Sub clearPIInput()
+        pi_student_search.Clear()
+    End Sub
+
+    Public Function IsAccessRunning() As Boolean
+        Dim accessProcessName As String = "MSACCESS" ' Process name for Microsoft Access
+
+        ' Get the list of all running processes
+        Dim processes As Process() = Process.GetProcesses()
+
+        ' Check if any of the processes match Microsoft Access and have a visible window
+        For Each process As Process In processes
+            If String.Equals(process.ProcessName, accessProcessName, StringComparison.OrdinalIgnoreCase) AndAlso Not process.MainWindowHandle.Equals(IntPtr.Zero) Then
+                ' Microsoft Access is running and has a visible window
+                Return True
+            End If
+        Next
+
+        ' Microsoft Access is not running or is running in the background
+        Return False
+    End Function
+
     Private Sub ProfCleanupWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles ProfCleanupWorker.DoWork
         Try
-            'globalAccessApp.CloseCurrentDatabase()
-            'globalAccessApp.Quit(AcQuitOption.acQuitSaveAll)
+            globalAccessApp.CloseCurrentDatabase()
+            globalAccessApp.Quit(AcQuitOption.acQuitSaveAll)
         Catch ex As Exception
 
         Finally
-            'If globalAccessApp IsNot Nothing Then
-            '    System.Runtime.InteropServices.Marshal.ReleaseComObject(globalAccessApp)
-            '    globalAccessApp = Nothing
-            'End If
+            If globalAccessApp IsNot Nothing Then
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(globalAccessApp)
+                globalAccessApp = Nothing
+            End If
             For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
                 process.Kill()
             Next
             Me.Dispose()
             Me.Close()
         End Try
+    End Sub
+
+    Private Sub modifyBtn_Click(sender As Object, e As EventArgs) Handles modifyBtn.Click
+        Try
+            globalAccessApp.OpenCurrentDatabase($"{Windows.Forms.Application.StartupPath}\Prof_To_Print.accdb", False, "")
+        Catch ex As Exception
+
+        End Try
+        Dim strAccReport As String = "to_print"
+        globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewDesign, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
+        globalAccessApp.Visible = True
+    End Sub
+
+    Private Sub previewBtn_Click(sender As Object, e As EventArgs) Handles previewBtn.Click
+        Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
+
+        If rows.Count <= 0 Then
+            MsgBox("No data to print")
+            Exit Sub
+        End If
+
+        Try
+            globalAccessApp.OpenCurrentDatabase($"{Windows.Forms.Application.StartupPath}\Prof_To_Print.accdb", False, "")
+        Catch ex As Exception
+
+        End Try
+        Dim strAccReport As String = "to_print"
+        globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
+        globalAccessApp.Visible = True
+    End Sub
+
+    Private Sub removeAllBtn_Click(sender As Object, e As EventArgs) Handles removeAllBtn.Click
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+            Exit Sub
+        End If
+
+        Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
+        If rows.Count >= 1 Then
+            If MsgBox("Do you want to clear out print queue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                DB.prof_to_print_conn.Open()
+                Using cmd As New OleDbCommand("DELETE FROM to_print", DB.prof_to_print_conn)
+                    cmd.ExecuteNonQuery()
+                End Using
+                DB.prof_to_print_conn.Close()
+                loadPIPrintQueue()
+            End If
+        Else
+            MsgBox("No queue to clear")
+        End If
+    End Sub
+
+    Private Sub removeSelectedBtn_Click(sender As Object, e As EventArgs) Handles removeSelectedBtn.Click
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+            Exit Sub
+        End If
+
+        Dim rows As DataGridViewSelectedRowCollection = pi_tp_dgv.SelectedRows
+
+        If rows.Count >= 1 Then
+            If MsgBox("Do you want to remove this/these from print queue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+
+                DB.prof_to_print_conn.Open()
+                Dim cmd As New OleDbCommand
+                For Each row As DataGridViewRow In rows
+                    cmd.CommandText = $"DELETE FROM to_print WHERE employee_number='{row.Cells("Employee_No").Value.ToString}'"
+                    cmd.Connection = DB.prof_to_print_conn
+                    cmd.ExecuteNonQuery()
+                Next
+                cmd.Dispose()
+                DB.prof_to_print_conn.Close()
+                loadPIPrintQueue()
+            End If
+        Else
+            MsgBox("Select a queue")
+        End If
+    End Sub
+
+    Private Sub TabPage3_Enter(sender As Object, e As EventArgs) Handles TabPage3.Enter
+        If Not isPIHasRun Then
+            loadPIPrintQueue()
+            loadPIStudents()
+            isPIHasRun = True
+        End If
+    End Sub
+
+    Private Sub printBtn_Click(sender As Object, e As EventArgs) Handles printBtn.Click
+        printBtn.Enabled = False
+        Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
+
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+        Else
+            If rows.Count <= 0 Then
+                MsgBox("No data to print")
+            Else
+                If MsgBox("Is the printer ready and physically connected?", MsgBoxStyle.YesNo) = DialogResult.Yes Then
+                    Try
+                        globalAccessApp.OpenCurrentDatabase($"{Windows.Forms.Application.StartupPath}\Prof_To_Print.accdb", False, "")
+                    Catch ex As Exception
+
+                    End Try
+
+                    If ProfPrinterList.ShowDialog() = DialogResult.OK Then
+                        Dim selectedPrinter As String = ProfPrinterList.PrinterSettings.PrinterName
+
+                        Dim strAccReport As String = "to_print"
+
+                        globalAccessApp.Visible = False
+
+                        globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
+
+                        globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
+
+                        globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
+
+                        'DB.student_data_conn.Open()
+                        'For Each row As DataGridViewRow In rows
+                        '    Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells("Student_Number").Value}'", DB.student_data_conn)
+                        '        cmdUpdate.ExecuteNonQuery()
+                        '    End Using
+                        'Next
+                        'DB.student_data_conn.Close()
+
+                        afterPrint()
+                    End If
+                End If
+            End If
+        End If
+
+        printBtn.Enabled = True
+    End Sub
+
+    Public Async Sub afterPrint()
+        Try
+            Await DB.student_to_print_conn.OpenAsync()
+            Using cmdDelete As New OleDbCommand("DELETE FROM to_print", DB.prof_to_print_conn)
+                Await cmdDelete.ExecuteNonQueryAsync()
+            End Using
+
+            loadPIPrintQueue()
+            loadPIStudents()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            DB.student_to_print_conn.Close()
+            MsgBox("Print started")
+        End Try
+    End Sub
+
+    Private Sub pi_student_search_TextChanged(sender As Object, e As EventArgs) Handles pi_student_search.TextChanged
+        If Not pi_student_search.Text = Nothing Or Not pi_student_search.Text = "" Then
+            loadPIStudents($"SELECT TOP 20 Full_Name FROM employee_search WHERE Full_Name LIKE '%{pi_student_search.Text}%' ORDER BY Full_Name ASC")
+        End If
+    End Sub
+
+    Private Sub pi_refreshBtn_Click(sender As Object, e As EventArgs) Handles pi_refreshBtn.Click
+        loadPIStudents()
+        clearPIInput()
+        MsgBox("Data Refreshed", MsgBoxStyle.OkOnly)
+    End Sub
+
+    Private Sub pi_dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles pi_dgv.CellClick
+        piSelect = pi_dgv.CurrentRow.Cells("Full_Name").Value.ToString
+    End Sub
+
+    Private Sub addToPrintQueueBtn_Click(sender As Object, e As EventArgs) Handles addToPrintQueueBtn.Click
+        If IsAccessRunning() Then
+            MsgBox("Please close all opened MS ACCESS app")
+            Exit Sub
+        End If
+
+        If pi_tp_dgv.Rows.Count >= 5 Then
+            MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
+        Else
+            If piSelect = Nothing Then
+                MsgBox("Please select a student")
+            Else
+                'CHECK IF IT WAS ALREADY IN THE PRINT QUEUE
+                Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
+                Dim isFound As Boolean = False
+                For Each row As DataGridViewRow In rows
+                    If UCase(row.Cells("Full_Name").Value.ToString) = UCase(piSelect) Then
+                        isFound = True
+                    End If
+                Next
+
+                If isFound Then
+                    MsgBox("Record already on print queue")
+                Else
+                    Dim pi_record_numer As String
+
+                    'GET RECORD NUMBER
+                    Using adpt As New OleDbDataAdapter($"SELECT employee_number FROM employee_search WHERE Full_Name='{piSelect}'", DB.prof_conn)
+                        Using dt As New DataTable
+                            adpt.Fill(dt)
+                            pi_record_numer = dt.Rows(0)(0).ToString()
+                        End Using
+                    End Using
+
+                    'GET ID DETAILS
+                    Dim employee_number_holder, fname, lname, mi, address, e_number, e_person, sss, tin, position, idPicture, idSignature As String
+                    Using adpt As New OleDbDataAdapter($"SELECT * FROM prof_data WHERE employee_number='{pi_record_numer}'", DB.prof_conn)
+                        Using dt As New DataTable
+                            adpt.Fill(dt)
+                            Dim currentRow As DataRow = dt.Rows(0)
+                            employee_number_holder = currentRow("employee_number")
+                            fname = currentRow("fname")
+                            mi = currentRow("mi")
+                            lname = currentRow("lname")
+                            address = currentRow("address")
+                            e_number = currentRow("e_number")
+                            e_person = currentRow("e_person")
+                            sss = currentRow("sss")
+                            tin = currentRow("tin")
+                            position = currentRow("work_position")
+                            idPicture = $"{Windows.Forms.Application.StartupPath}\prof_pictures\{currentRow("picture")}"
+                            idSignature = $"{Windows.Forms.Application.StartupPath}\prof_signatures\{currentRow("signature")}"
+                        End Using
+                    End Using
+
+                    'INSERT TO PRINT QUEUE DB
+                    DB.prof_to_print_conn.Open()
+                    Using cmd As New OleDbCommand("INSERT INTO to_print VALUES(@emplo,@picture,@signature,@fname,@mi,@lname,@address,@e_number,@e_person,@wp,@sss,@tin)", DB.prof_to_print_conn)
+                        With cmd
+                            .Parameters.AddWithValue("@emplo", employee_number_holder)
+                            .Parameters.AddWithValue("@picture", idPicture)
+                            .Parameters.AddWithValue("@signature", idSignature)
+                            .Parameters.AddWithValue("@fname", fname)
+                            .Parameters.AddWithValue("@mi", mi)
+                            .Parameters.AddWithValue("@lname", lname)
+                            .Parameters.AddWithValue("@address", address)
+                            .Parameters.AddWithValue("@e_number", e_number)
+                            .Parameters.AddWithValue("@e_person", e_person)
+                            .Parameters.AddWithValue("@wp", position)
+                            .Parameters.AddWithValue("@sss", sss)
+                            .Parameters.AddWithValue("@tin", tin)
+                            .ExecuteNonQuery()
+                        End With
+                    End Using
+                    DB.prof_to_print_conn.Close()
+                    loadPIPrintQueue()
+                End If
+            End If
+        End If
     End Sub
 End Class

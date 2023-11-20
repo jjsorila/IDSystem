@@ -92,7 +92,7 @@ Public Class Prof_Camera_Form
         End If
 
         Prof_Form.isIdUploaded = 1
-        Select_Photo_Source.Close()
+        Prof_Select_Photo_Source.Close()
         Me.Close()
     End Sub
 
