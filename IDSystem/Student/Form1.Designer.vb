@@ -509,8 +509,8 @@ Partial Class Form1
         Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Yellow
         Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(56, 23)
-        Me.ToolStripMenuItem2.Text = "HELP"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(176, 23)
+        Me.ToolStripMenuItem2.Text = "ON-SCREEN MANUAL"
         '
         'Form1
         '

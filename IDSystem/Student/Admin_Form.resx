@@ -2218,10 +2218,10 @@
     <value>Comic Sans MS, 10pt, style=Bold</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
+    <value>176, 23</value>
   </data>
   <data name="ToolStripMenuItem2.Text" xml:space="preserve">
-    <value>HELP</value>
+    <value>ON-SCREEN MANUAL</value>
   </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
