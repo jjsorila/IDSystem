@@ -11,8 +11,6 @@ Public Class Admin_Form
 
     'USI TAB=======================================================================================================================================================
     Public Sub loadUSIData(Optional query As String = "SELECT full_name AS Full_Name FROM student_search ORDER BY full_name ASC")
-        dgv_usi.DefaultCellStyle.ForeColor = Color.Black
-
         Using adpt As New OleDbDataAdapter(query, DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -273,7 +271,6 @@ Public Class Admin_Form
     End Function
 
     Public Sub loadPIPrintQueue()
-        pi_tp_dgv.DefaultCellStyle.ForeColor = Color.Black
         Using adpt As New OleDbDataAdapter("SELECT s_number AS Student_Number,lname & ', ' & fname & ' ' & mi AS Full_Name FROM to_print", DB.student_to_print_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)

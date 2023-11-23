@@ -139,7 +139,8 @@ Partial Class Admin_Form
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.DarkGreen
+        Me.TabPage1.BackColor = System.Drawing.Color.White
+        Me.TabPage1.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.TabPage1.Controls.Add(Me.GroupBox8)
         Me.TabPage1.Controls.Add(Me.GroupBox7)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -165,6 +166,8 @@ Partial Class Admin_Form
         Me.usi_refreshData.Cursor = System.Windows.Forms.Cursors.Hand
         Me.usi_refreshData.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.usi_refreshData.FlatAppearance.BorderSize = 3
+        Me.usi_refreshData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.usi_refreshData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.usi_refreshData, "usi_refreshData")
         Me.usi_refreshData.ForeColor = System.Drawing.Color.White
         Me.usi_refreshData.Name = "usi_refreshData"
@@ -197,7 +200,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -271,6 +274,8 @@ Partial Class Admin_Form
         Me.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.updateBtn.FlatAppearance.BorderSize = 3
+        Me.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.updateBtn, "updateBtn")
         Me.updateBtn.ForeColor = System.Drawing.Color.White
         Me.updateBtn.Name = "updateBtn"
@@ -282,6 +287,8 @@ Partial Class Admin_Form
         Me.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.deleteBtn.FlatAppearance.BorderSize = 3
+        Me.deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.deleteBtn, "deleteBtn")
         Me.deleteBtn.ForeColor = System.Drawing.Color.White
         Me.deleteBtn.Name = "deleteBtn"
@@ -438,7 +445,8 @@ Partial Class Admin_Form
         '
         'TabPage2
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.DarkGreen
+        Me.TabPage2.BackColor = System.Drawing.Color.White
+        Me.TabPage2.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.GroupBox5)
         Me.TabPage2.Controls.Add(Me.GroupBox10)
@@ -447,6 +455,7 @@ Partial Class Admin_Form
         '
         'GroupBox6
         '
+        Me.GroupBox6.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox6.Controls.Add(Me.remove_validity)
         Me.GroupBox6.Controls.Add(Me.add_validity)
         Me.GroupBox6.Controls.Add(Me.uid_add_validity)
@@ -463,6 +472,8 @@ Partial Class Admin_Form
         Me.remove_validity.Cursor = System.Windows.Forms.Cursors.Hand
         Me.remove_validity.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.remove_validity.FlatAppearance.BorderSize = 3
+        Me.remove_validity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.remove_validity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.remove_validity, "remove_validity")
         Me.remove_validity.ForeColor = System.Drawing.Color.White
         Me.remove_validity.Name = "remove_validity"
@@ -474,6 +485,8 @@ Partial Class Admin_Form
         Me.add_validity.Cursor = System.Windows.Forms.Cursors.Hand
         Me.add_validity.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.add_validity.FlatAppearance.BorderSize = 3
+        Me.add_validity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.add_validity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.add_validity, "add_validity")
         Me.add_validity.ForeColor = System.Drawing.Color.White
         Me.add_validity.Name = "add_validity"
@@ -493,6 +506,7 @@ Partial Class Admin_Form
         '
         'GroupBox5
         '
+        Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox5.Controls.Add(Me.remove_course)
         Me.GroupBox5.Controls.Add(Me.add_course)
         Me.GroupBox5.Controls.Add(Me.uid_add_course)
@@ -509,6 +523,8 @@ Partial Class Admin_Form
         Me.remove_course.Cursor = System.Windows.Forms.Cursors.Hand
         Me.remove_course.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.remove_course.FlatAppearance.BorderSize = 3
+        Me.remove_course.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.remove_course.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.remove_course, "remove_course")
         Me.remove_course.ForeColor = System.Drawing.Color.White
         Me.remove_course.Name = "remove_course"
@@ -520,6 +536,8 @@ Partial Class Admin_Form
         Me.add_course.Cursor = System.Windows.Forms.Cursors.Hand
         Me.add_course.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.add_course.FlatAppearance.BorderSize = 3
+        Me.add_course.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.add_course.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.add_course, "add_course")
         Me.add_course.ForeColor = System.Drawing.Color.White
         Me.add_course.Name = "add_course"
@@ -539,6 +557,7 @@ Partial Class Admin_Form
         '
         'GroupBox10
         '
+        Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox10.Controls.Add(Me.uid_update_validity)
         Me.GroupBox10.Controls.Add(Me.updateAllBtn)
         Me.GroupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -560,6 +579,8 @@ Partial Class Admin_Form
         Me.updateAllBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.updateAllBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.updateAllBtn.FlatAppearance.BorderSize = 3
+        Me.updateAllBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.updateAllBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.updateAllBtn, "updateAllBtn")
         Me.updateAllBtn.ForeColor = System.Drawing.Color.White
         Me.updateAllBtn.Name = "updateAllBtn"
@@ -567,7 +588,8 @@ Partial Class Admin_Form
         '
         'TabPage3
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.DarkGreen
+        Me.TabPage3.BackColor = System.Drawing.Color.White
+        Me.TabPage3.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.TabPage3.Controls.Add(Me.GroupBox4)
         Me.TabPage3.Controls.Add(Me.GroupBox3)
         resources.ApplyResources(Me.TabPage3, "TabPage3")
@@ -575,6 +597,7 @@ Partial Class Admin_Form
         '
         'GroupBox4
         '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.Controls.Add(Me.pi_tp_dgv)
         Me.GroupBox4.Controls.Add(Me.removeSelectedBtn)
         Me.GroupBox4.Controls.Add(Me.removeAllBtn)
@@ -598,7 +621,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -609,7 +632,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -636,6 +659,8 @@ Partial Class Admin_Form
         Me.removeSelectedBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.removeSelectedBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.removeSelectedBtn.FlatAppearance.BorderSize = 3
+        Me.removeSelectedBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.removeSelectedBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.removeSelectedBtn, "removeSelectedBtn")
         Me.removeSelectedBtn.ForeColor = System.Drawing.Color.White
         Me.removeSelectedBtn.Name = "removeSelectedBtn"
@@ -647,6 +672,8 @@ Partial Class Admin_Form
         Me.removeAllBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.removeAllBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.removeAllBtn.FlatAppearance.BorderSize = 3
+        Me.removeAllBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.removeAllBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.removeAllBtn, "removeAllBtn")
         Me.removeAllBtn.ForeColor = System.Drawing.Color.White
         Me.removeAllBtn.Name = "removeAllBtn"
@@ -658,6 +685,8 @@ Partial Class Admin_Form
         Me.printBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.printBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.printBtn.FlatAppearance.BorderSize = 3
+        Me.printBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.printBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.printBtn, "printBtn")
         Me.printBtn.ForeColor = System.Drawing.Color.White
         Me.printBtn.Name = "printBtn"
@@ -669,6 +698,8 @@ Partial Class Admin_Form
         Me.previewBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.previewBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.previewBtn.FlatAppearance.BorderSize = 3
+        Me.previewBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.previewBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.previewBtn, "previewBtn")
         Me.previewBtn.ForeColor = System.Drawing.Color.White
         Me.previewBtn.Name = "previewBtn"
@@ -680,6 +711,8 @@ Partial Class Admin_Form
         Me.modifyBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.modifyBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.modifyBtn.FlatAppearance.BorderSize = 3
+        Me.modifyBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.modifyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.modifyBtn, "modifyBtn")
         Me.modifyBtn.ForeColor = System.Drawing.Color.White
         Me.modifyBtn.Name = "modifyBtn"
@@ -687,6 +720,7 @@ Partial Class Admin_Form
         '
         'GroupBox3
         '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.id_validity_indicator)
         Me.GroupBox3.Controls.Add(Me.pi_refreshBtn)
         Me.GroupBox3.Controls.Add(Me.pi_dgv)
@@ -709,6 +743,8 @@ Partial Class Admin_Form
         Me.pi_refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pi_refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.pi_refreshBtn.FlatAppearance.BorderSize = 3
+        Me.pi_refreshBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.pi_refreshBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.pi_refreshBtn, "pi_refreshBtn")
         Me.pi_refreshBtn.ForeColor = System.Drawing.Color.White
         Me.pi_refreshBtn.Name = "pi_refreshBtn"
@@ -724,7 +760,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -735,7 +771,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -811,6 +847,8 @@ Partial Class Admin_Form
         Me.addToPrintQueueBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addToPrintQueueBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.addToPrintQueueBtn.FlatAppearance.BorderSize = 3
+        Me.addToPrintQueueBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.addToPrintQueueBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.addToPrintQueueBtn, "addToPrintQueueBtn")
         Me.addToPrintQueueBtn.ForeColor = System.Drawing.Color.White
         Me.addToPrintQueueBtn.Name = "addToPrintQueueBtn"
@@ -842,7 +880,7 @@ Partial Class Admin_Form
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
+        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D

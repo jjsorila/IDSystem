@@ -146,7 +146,8 @@ Partial Class Prof_Form
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.DarkGreen
+        Me.TabPage1.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage1.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.TabPage1.Controls.Add(Me.GroupBox8)
         Me.TabPage1.Controls.Add(Me.GroupBox7)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -206,7 +207,7 @@ Partial Class Prof_Form
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -312,6 +313,8 @@ Partial Class Prof_Form
         Me.insertBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.insertBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.insertBtn.FlatAppearance.BorderSize = 3
+        Me.insertBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.insertBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.insertBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.insertBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.insertBtn.ForeColor = System.Drawing.Color.White
@@ -329,6 +332,8 @@ Partial Class Prof_Form
         Me.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.clearBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.clearBtn.FlatAppearance.BorderSize = 3
+        Me.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.clearBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.clearBtn.ForeColor = System.Drawing.Color.White
@@ -346,6 +351,8 @@ Partial Class Prof_Form
         Me.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.updateBtn.FlatAppearance.BorderSize = 3
+        Me.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.updateBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.updateBtn.ForeColor = System.Drawing.Color.White
@@ -363,6 +370,8 @@ Partial Class Prof_Form
         Me.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.deleteBtn.FlatAppearance.BorderSize = 3
+        Me.deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.deleteBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.deleteBtn.ForeColor = System.Drawing.Color.White
@@ -612,7 +621,8 @@ Partial Class Prof_Form
         '
         'TabPage3
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.DarkGreen
+        Me.TabPage3.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage3.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.TabPage3.Controls.Add(Me.GroupBox4)
         Me.TabPage3.Controls.Add(Me.GroupBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 33)
@@ -661,8 +671,8 @@ Partial Class Prof_Form
         Me.pi_tp_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -693,6 +703,8 @@ Partial Class Prof_Form
         Me.removeSelectedBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.removeSelectedBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.removeSelectedBtn.FlatAppearance.BorderSize = 3
+        Me.removeSelectedBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.removeSelectedBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.removeSelectedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.removeSelectedBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.removeSelectedBtn.ForeColor = System.Drawing.Color.White
@@ -710,6 +722,8 @@ Partial Class Prof_Form
         Me.removeAllBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.removeAllBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.removeAllBtn.FlatAppearance.BorderSize = 3
+        Me.removeAllBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.removeAllBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.removeAllBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.removeAllBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.removeAllBtn.ForeColor = System.Drawing.Color.White
@@ -727,6 +741,8 @@ Partial Class Prof_Form
         Me.printBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.printBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.printBtn.FlatAppearance.BorderSize = 3
+        Me.printBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.printBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.printBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.printBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.printBtn.ForeColor = System.Drawing.Color.White
@@ -744,6 +760,8 @@ Partial Class Prof_Form
         Me.previewBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.previewBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.previewBtn.FlatAppearance.BorderSize = 3
+        Me.previewBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.previewBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.previewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.previewBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.previewBtn.ForeColor = System.Drawing.Color.White
@@ -761,6 +779,8 @@ Partial Class Prof_Form
         Me.modifyBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.modifyBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.modifyBtn.FlatAppearance.BorderSize = 3
+        Me.modifyBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.modifyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.modifyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modifyBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.modifyBtn.ForeColor = System.Drawing.Color.White
@@ -794,6 +814,8 @@ Partial Class Prof_Form
         Me.pi_refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pi_refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.pi_refreshBtn.FlatAppearance.BorderSize = 3
+        Me.pi_refreshBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.pi_refreshBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.pi_refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.pi_refreshBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.pi_refreshBtn.ForeColor = System.Drawing.Color.White
@@ -825,8 +847,8 @@ Partial Class Prof_Form
         Me.pi_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -891,6 +913,8 @@ Partial Class Prof_Form
         Me.addToPrintQueueBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addToPrintQueueBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.addToPrintQueueBtn.FlatAppearance.BorderSize = 3
+        Me.addToPrintQueueBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.addToPrintQueueBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.addToPrintQueueBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addToPrintQueueBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
         Me.addToPrintQueueBtn.ForeColor = System.Drawing.Color.White
@@ -914,7 +938,7 @@ Partial Class Prof_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
+        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(984, 811)
         Me.Controls.Add(Me.TabControl1)

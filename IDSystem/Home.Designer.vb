@@ -33,11 +33,13 @@ Partial Class Home
         '
         Me.student_btn.BackColor = System.Drawing.Color.Transparent
         Me.student_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.student_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.student_btn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.student_btn.FlatAppearance.BorderSize = 3
+        Me.student_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.student_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.student_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.student_btn.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.student_btn.ForeColor = System.Drawing.Color.Black
+        Me.student_btn.ForeColor = System.Drawing.Color.White
         Me.student_btn.Location = New System.Drawing.Point(138, 212)
         Me.student_btn.Name = "student_btn"
         Me.student_btn.Size = New System.Drawing.Size(241, 124)
@@ -50,7 +52,7 @@ Partial Class Home
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(230, 55)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
@@ -64,7 +66,7 @@ Partial Class Home
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = Global.IDSystem.My.Resources.Resources.logo_1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.PictureBox1.Location = New System.Drawing.Point(86, 28)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
@@ -76,23 +78,25 @@ Partial Class Home
         '
         Me.prof_btn.BackColor = System.Drawing.Color.Transparent
         Me.prof_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.prof_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.prof_btn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.prof_btn.FlatAppearance.BorderSize = 3
+        Me.prof_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.prof_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.prof_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.prof_btn.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.prof_btn.ForeColor = System.Drawing.Color.Black
+        Me.prof_btn.ForeColor = System.Drawing.Color.White
         Me.prof_btn.Location = New System.Drawing.Point(447, 212)
         Me.prof_btn.Name = "prof_btn"
         Me.prof_btn.Size = New System.Drawing.Size(241, 124)
         Me.prof_btn.TabIndex = 21
-        Me.prof_btn.Text = "COLLEGE PROFESSOR ID"
+        Me.prof_btn.Text = "COLLEGE STAFF ID"
         Me.prof_btn.UseVisualStyleBackColor = False
         '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
+        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.prof_btn)

@@ -77,6 +77,8 @@ Partial Class Change_PIN
         Me.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.updateBtn.FlatAppearance.BorderSize = 3
+        Me.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.updateBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updateBtn.ForeColor = System.Drawing.Color.Black

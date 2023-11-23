@@ -50,6 +50,8 @@ Partial Class Prof_Signpad_Form
         Me.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.clearBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.clearBtn.FlatAppearance.BorderSize = 3
+        Me.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.clearBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clearBtn.ForeColor = System.Drawing.Color.Black
@@ -66,6 +68,8 @@ Partial Class Prof_Signpad_Form
         Me.doneBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.doneBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.doneBtn.FlatAppearance.BorderSize = 3
+        Me.doneBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.doneBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.doneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.doneBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.doneBtn.ForeColor = System.Drawing.Color.Black
@@ -89,11 +93,11 @@ Partial Class Prof_Signpad_Form
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(41, 219)
+        Me.Label12.Location = New System.Drawing.Point(21, 199)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(376, 23)
+        Me.Label12.Size = New System.Drawing.Size(410, 23)
         Me.Label12.TabIndex = 21
-        Me.Label12.Text = "HOLD DOWN LEFT CLICK MOUSE TO DRAW"
+        Me.Label12.Text = "HOLD LEFT CLICK MOUSE AND DRAG TO DRAW"
         '
         'Panel2
         '
@@ -119,7 +123,7 @@ Partial Class Prof_Signpad_Form
         Me.Panel4.Size = New System.Drawing.Size(450, 10)
         Me.Panel4.TabIndex = 21
         '
-        'Signpad_Form
+        'Prof_Signpad_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -136,7 +140,7 @@ Partial Class Prof_Signpad_Form
         Me.Controls.Add(Me.signpad)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Signpad_Form"
+        Me.Name = "Prof_Signpad_Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Signpad_Form"
         CType(Me.signpad, System.ComponentModel.ISupportInitialize).EndInit()

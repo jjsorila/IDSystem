@@ -88,7 +88,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(375, 67)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
@@ -121,11 +121,13 @@ Partial Class Form1
         '
         Me.register_btn.BackColor = System.Drawing.Color.Transparent
         Me.register_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.register_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.register_btn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.register_btn.FlatAppearance.BorderSize = 3
+        Me.register_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.register_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.register_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.register_btn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.register_btn.ForeColor = System.Drawing.Color.Black
+        Me.register_btn.ForeColor = System.Drawing.Color.White
         Me.register_btn.Location = New System.Drawing.Point(223, 238)
         Me.register_btn.Name = "register_btn"
         Me.register_btn.Size = New System.Drawing.Size(187, 39)
@@ -137,11 +139,13 @@ Partial Class Form1
         '
         Me.clear_btn.BackColor = System.Drawing.Color.Transparent
         Me.clear_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.clear_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.clear_btn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.clear_btn.FlatAppearance.BorderSize = 3
+        Me.clear_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.clear_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.clear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.clear_btn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.clear_btn.ForeColor = System.Drawing.Color.Black
+        Me.clear_btn.ForeColor = System.Drawing.Color.White
         Me.clear_btn.Location = New System.Drawing.Point(30, 238)
         Me.clear_btn.Name = "clear_btn"
         Me.clear_btn.Size = New System.Drawing.Size(187, 39)
@@ -162,6 +166,7 @@ Partial Class Form1
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(148, 164)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(138, 23)
@@ -172,6 +177,7 @@ Partial Class Form1
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(183, 92)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(69, 23)
@@ -182,6 +188,7 @@ Partial Class Form1
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(190, 21)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(54, 23)
@@ -240,6 +247,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(125, 545)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(223, 23)
@@ -250,6 +258,7 @@ Partial Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(124, 476)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(233, 23)
@@ -260,6 +269,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(185, 409)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(81, 23)
@@ -270,6 +280,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(179, 342)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(102, 23)
@@ -280,6 +291,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(389, 277)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(47, 23)
@@ -290,6 +302,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(179, 277)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(106, 23)
@@ -358,7 +371,7 @@ Partial Class Form1
         Me.GroupBox5.Controls.Add(Me.id_picture)
         Me.GroupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox5.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox5.ForeColor = System.Drawing.Color.White
         Me.GroupBox5.Location = New System.Drawing.Point(14, 18)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(442, 241)
@@ -400,6 +413,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Label8)
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox4.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.White
         Me.GroupBox4.Location = New System.Drawing.Point(520, 455)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
@@ -413,11 +427,13 @@ Partial Class Form1
         '
         Me.refreshBtn.BackColor = System.Drawing.Color.Transparent
         Me.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.refreshBtn.FlatAppearance.BorderSize = 3
+        Me.refreshBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.refreshBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.refreshBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.refreshBtn.ForeColor = System.Drawing.Color.Black
+        Me.refreshBtn.ForeColor = System.Drawing.Color.White
         Me.refreshBtn.Location = New System.Drawing.Point(30, 83)
         Me.refreshBtn.Name = "refreshBtn"
         Me.refreshBtn.Size = New System.Drawing.Size(380, 39)
@@ -456,7 +472,7 @@ Partial Class Form1
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -486,6 +502,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(26, 48)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(82, 23)
@@ -517,7 +534,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.mainbg
+        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(980, 807)
         Me.Controls.Add(Me.Label1)

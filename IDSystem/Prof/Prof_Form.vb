@@ -10,8 +10,6 @@ Public Class Prof_Form
 
     'USI TAB=======================================================================================================================================================
     Public Sub loadUSIData(Optional query As String = "SELECT Full_Name FROM employee_search ORDER BY Full_Name ASC")
-        dgv_usi.DefaultCellStyle.ForeColor = Color.Black
-
         Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -334,7 +332,6 @@ Public Class Prof_Form
     Dim globalAccessApp As New Microsoft.Office.Interop.Access.Application()
 
     Public Sub loadPIPrintQueue()
-        pi_tp_dgv.DefaultCellStyle.ForeColor = Color.Black
         Using adpt As New OleDbDataAdapter("SELECT employee_number AS Employee_No,lname & ', ' & fname & ' ' & mi AS Full_Name FROM to_print", DB.prof_to_print_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -344,8 +341,6 @@ Public Class Prof_Form
     End Sub
 
     Public Sub loadPIStudents(Optional query As String = "SELECT TOP 20 Full_Name FROM employee_search ORDER BY Full_Name ASC")
-        pi_dgv.DefaultCellStyle.ForeColor = Color.Black
-
         Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -550,6 +545,8 @@ Public Class Prof_Form
     Private Sub pi_student_search_TextChanged(sender As Object, e As EventArgs) Handles pi_student_search.TextChanged
         If Not pi_student_search.Text = Nothing Or Not pi_student_search.Text = "" Then
             loadPIStudents($"SELECT TOP 20 Full_Name FROM employee_search WHERE Full_Name LIKE '%{pi_student_search.Text}%' ORDER BY Full_Name ASC")
+        Else
+            loadPIStudents()
         End If
     End Sub
 
@@ -646,5 +643,13 @@ Public Class Prof_Form
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         Prof_Help.Show()
+    End Sub
+
+    Private Sub studentSearchUSI_TextChanged(sender As Object, e As EventArgs) Handles studentSearchUSI.TextChanged
+        If Not studentSearchUSI.Text = Nothing Or Not studentSearchUSI.Text = "" Then
+            loadUSIData($"SELECT Full_Name FROM employee_search WHERE Full_Name LIKE '%{studentSearchUSI.Text}%' ORDER BY Full_Name ASC")
+        Else
+            loadUSIData()
+        End If
     End Sub
 End Class

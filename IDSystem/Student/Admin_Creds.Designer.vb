@@ -54,6 +54,8 @@ Partial Class Admin_Creds
         Me.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.loginBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.loginBtn.FlatAppearance.BorderSize = 3
+        Me.loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loginBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginBtn.ForeColor = System.Drawing.Color.Black

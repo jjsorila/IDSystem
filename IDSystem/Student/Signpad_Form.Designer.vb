@@ -50,6 +50,8 @@ Partial Class Signpad_Form
         Me.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.clearBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.clearBtn.FlatAppearance.BorderSize = 3
+        Me.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.clearBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clearBtn.ForeColor = System.Drawing.Color.Black
@@ -66,6 +68,8 @@ Partial Class Signpad_Form
         Me.doneBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.doneBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.doneBtn.FlatAppearance.BorderSize = 3
+        Me.doneBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.doneBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.doneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.doneBtn.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.doneBtn.ForeColor = System.Drawing.Color.Black
@@ -89,11 +93,11 @@ Partial Class Signpad_Form
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(41, 219)
+        Me.Label12.Location = New System.Drawing.Point(20, 199)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(376, 23)
+        Me.Label12.Size = New System.Drawing.Size(410, 23)
         Me.Label12.TabIndex = 21
-        Me.Label12.Text = "HOLD DOWN LEFT CLICK MOUSE TO DRAW"
+        Me.Label12.Text = "HOLD LEFT CLICK MOUSE AND DRAG TO DRAW"
         '
         'Panel2
         '
