@@ -85,7 +85,7 @@ Public Class Admin_Form
         If record_number = Nothing Then
             MsgBox("Please select a student", MsgBoxStyle.OkOnly)
         Else
-            Admin_Signpad_Form.Show()
+            Admin_Select_Signature_Source.Show()
         End If
     End Sub
 
@@ -741,6 +741,7 @@ Public Class Admin_Form
     'CLEANUP WORK==================================================================================================================================================
     Private Sub Admin_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Form1.isAdminFormOpen = False
+        Admin_Select_Signature_Source.Close()
         Admin_Select_Photo_Source.Close()
         Admin_Signpad_Form.Close()
         Admin_Help.Close()

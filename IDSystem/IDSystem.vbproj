@@ -117,6 +117,12 @@
     <Compile Include="Prof\Prof_Select_Photo_Source.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Prof\Prof_Select_Signature_Source.Designer.vb">
+      <DependentUpon>Prof_Select_Signature_Source.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prof\Prof_Select_Signature_Source.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Prof\Prof_Signpad_Form.Designer.vb">
       <DependentUpon>Prof_Signpad_Form.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,12 @@
       <DependentUpon>Admin_Select_Photo_Source.vb</DependentUpon>
     </Compile>
     <Compile Include="Student\Admin_Select_Photo_Source.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Admin_Select_Signature_Source.Designer.vb">
+      <DependentUpon>Admin_Select_Signature_Source.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Admin_Select_Signature_Source.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student\Admin_Signpad_Form.Designer.vb">
@@ -207,6 +219,12 @@
     <Compile Include="Student\Select_Photo_Source.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Student\Select_Signature_Source.Designer.vb">
+      <DependentUpon>Select_Signature_Source.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Select_Signature_Source.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Student\Signpad_Form.Designer.vb">
       <DependentUpon>Signpad_Form.vb</DependentUpon>
     </Compile>
@@ -230,6 +248,9 @@
     <EmbeddedResource Include="Prof\Prof_Select_Photo_Source.resx">
       <DependentUpon>Prof_Select_Photo_Source.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prof\Prof_Select_Signature_Source.resx">
+      <DependentUpon>Prof_Select_Signature_Source.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prof\Prof_Signpad_Form.resx">
       <DependentUpon>Prof_Signpad_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Admin_Select_Photo_Source.resx">
       <DependentUpon>Admin_Select_Photo_Source.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Admin_Select_Signature_Source.resx">
+      <DependentUpon>Admin_Select_Signature_Source.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Admin_Signpad_Form.resx">
       <DependentUpon>Admin_Signpad_Form.vb</DependentUpon>
@@ -271,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Select_Photo_Source.resx">
       <DependentUpon>Select_Photo_Source.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Select_Signature_Source.resx">
+      <DependentUpon>Select_Signature_Source.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Signpad_Form.resx">
       <DependentUpon>Signpad_Form.vb</DependentUpon>

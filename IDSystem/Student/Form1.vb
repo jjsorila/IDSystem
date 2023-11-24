@@ -99,7 +99,7 @@ Public Class Form1
     End Sub
 
     Private Sub id_signature_Click(sender As Object, e As EventArgs) Handles id_signature.Click
-        Signpad_Form.Show()
+        Select_Signature_Source.Show()
     End Sub
 
     Private Sub register_btn_Click(sender As Object, e As EventArgs) Handles register_btn.Click
@@ -219,6 +219,7 @@ Public Class Form1
             Help.Close()
             Select_Photo_Source.Close()
             Signpad_Form.Close()
+            Select_Signature_Source.Close()
             Home.Show()
             Me.Dispose()
             Me.Close()

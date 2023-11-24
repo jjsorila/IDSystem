@@ -67,6 +67,7 @@ Public Class Prof_Form
     End Sub
     Private Sub Prof_Form_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Prof_Help.Close()
+        Prof_Select_Signature_Source.Close()
         Prof_Select_Photo_Source.Close()
         Prof_Signpad_Form.Close()
         ProfCleanupWorker.RunWorkerAsync()
@@ -118,7 +119,7 @@ Public Class Prof_Form
     End Sub
 
     Private Sub usi_id_signature_Click(sender As Object, e As EventArgs) Handles usi_id_signature.Click
-        Prof_Signpad_Form.Show()
+        Prof_Select_Signature_Source.Show()
     End Sub
 
     Private Sub usi_id_picture_Click(sender As Object, e As EventArgs) Handles usi_id_picture.Click

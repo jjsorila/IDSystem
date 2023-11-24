@@ -19,12 +19,14 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Camera_Form.resou
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Help.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Select_Photo_Source.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Select_Signature_Source.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Prof_Signpad_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Camera_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Creds.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Help.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Select_Photo_Source.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Select_Signature_Source.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Admin_Signpad_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Camera_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Change_PIN.resources
@@ -32,6 +34,7 @@ C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Form1.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Resources.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Help.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Select_Photo_Source.resources
+C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Select_Signature_Source.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.Signpad_Form.resources
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.GenerateResource.cache
 C:\Users\JJS\Desktop\IDSystem\IDSystem\obj\Debug\IDSystem.vbproj.CoreCompileInputs.cache
