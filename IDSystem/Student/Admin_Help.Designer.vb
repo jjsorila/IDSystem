@@ -28,8 +28,8 @@ Partial Class Admin_Help
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +69,7 @@ Partial Class Admin_Help
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(802, 669)
+        Me.TabPage2.Size = New System.Drawing.Size(802, 730)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Page 2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -81,7 +81,7 @@ Partial Class Admin_Help
         Me.TabPage4.Location = New System.Drawing.Point(4, 34)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(802, 669)
+        Me.TabPage4.Size = New System.Drawing.Size(802, 730)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Page 3"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -98,18 +98,6 @@ Partial Class Admin_Help
         Me.TabPage3.Text = "Modifying ID Template"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'TabPage5
-        '
-        Me.TabPage5.BackgroundImage = Global.IDSystem.My.Resources.Resources.warning
-        Me.TabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.TabPage5.Location = New System.Drawing.Point(4, 34)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(802, 669)
-        Me.TabPage5.TabIndex = 5
-        Me.TabPage5.Text = "BEFORE PRINTING"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
         'AxWindowsMediaPlayer1
         '
         Me.AxWindowsMediaPlayer1.Enabled = True
@@ -118,6 +106,18 @@ Partial Class Admin_Help
         Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(802, 730)
         Me.AxWindowsMediaPlayer1.TabIndex = 1
+        '
+        'TabPage5
+        '
+        Me.TabPage5.BackgroundImage = Global.IDSystem.My.Resources.Resources.warning
+        Me.TabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.TabPage5.Location = New System.Drawing.Point(4, 34)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(802, 730)
+        Me.TabPage5.TabIndex = 5
+        Me.TabPage5.Text = "BEFORE PRINTING"
+        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'Admin_Help
         '

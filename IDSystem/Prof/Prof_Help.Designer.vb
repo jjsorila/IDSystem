@@ -55,7 +55,7 @@ Partial Class Prof_Help
         Me.TabPage1.Location = New System.Drawing.Point(4, 34)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(761, 716)
+        Me.TabPage1.Size = New System.Drawing.Size(802, 730)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Page 1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -67,7 +67,7 @@ Partial Class Prof_Help
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(761, 716)
+        Me.TabPage2.Size = New System.Drawing.Size(802, 730)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Page 2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -99,7 +99,7 @@ Partial Class Prof_Help
         Me.TabPage4.Location = New System.Drawing.Point(4, 34)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(761, 716)
+        Me.TabPage4.Size = New System.Drawing.Size(802, 730)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "BEFORE PRINTING"
         Me.TabPage4.UseVisualStyleBackColor = True
