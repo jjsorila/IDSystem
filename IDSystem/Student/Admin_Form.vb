@@ -552,15 +552,33 @@ Public Class Admin_Form
 
                         globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
 
-                        DB.student_data_conn.Open()
-                        For Each row As DataGridViewRow In rows
-                            Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells(0).Value}'", DB.student_data_conn)
-                                cmdUpdate.ExecuteNonQuery()
-                            End Using
-                        Next
-                        DB.student_data_conn.Close()
+                        Try
+                            DB.student_data_conn.Open()
+                            For Each row As DataGridViewRow In rows
+                                Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells(0).Value}'", DB.student_data_conn)
+                                    cmdUpdate.ExecuteNonQuery()
+                                End Using
+                            Next
+                        Catch ex As Exception
+                            MsgBox(ex.Message)
+                        Finally
+                            DB.student_data_conn.Close()
+                        End Try
 
-                        afterPrint()
+                        Try
+                            DB.student_to_print_conn.Open()
+                            Using cmdDelete As New OleDbCommand("DELETE FROM to_print", DB.student_to_print_conn)
+                                cmdDelete.ExecuteNonQuery()
+                            End Using
+
+                            loadPIPrintQueue()
+                            loadPIStudents()
+                        Catch ex As Exception
+                            MsgBox(ex.Message)
+                        Finally
+                            DB.student_to_print_conn.Close()
+                        End Try
+
                     End If
                 End If
             End If

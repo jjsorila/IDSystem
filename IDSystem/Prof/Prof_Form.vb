@@ -508,7 +508,19 @@ Public Class Prof_Form
 
                         globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
 
-                        afterPrint()
+                        Try
+                            DB.prof_to_print_conn.Open()
+                            Using cmdDelete As New OleDbCommand("DELETE FROM to_print", DB.prof_to_print_conn)
+                                cmdDelete.ExecuteNonQuery()
+                            End Using
+
+                            loadPIPrintQueue()
+                            loadPIStudents()
+                        Catch ex As Exception
+                            MsgBox(ex.Message)
+                        Finally
+                            DB.prof_to_print_conn.Close()
+                        End Try
                     End If
                 End If
             End If
