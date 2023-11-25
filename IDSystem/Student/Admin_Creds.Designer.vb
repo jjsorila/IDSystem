@@ -63,7 +63,7 @@ Partial Class Admin_Creds
         Me.loginBtn.Name = "loginBtn"
         Me.loginBtn.Size = New System.Drawing.Size(187, 39)
         Me.loginBtn.TabIndex = 19
-        Me.loginBtn.Text = "LOGIN"
+        Me.loginBtn.Text = "PROCEED"
         Me.loginBtn.UseVisualStyleBackColor = False
         '
         'Admin_Creds

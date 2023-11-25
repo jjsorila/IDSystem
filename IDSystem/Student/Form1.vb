@@ -7,7 +7,7 @@ Public Class Form1
     Public isSignatureUploaded As Integer = 0
     Public isAdminFormOpen As Boolean = False
 
-    Public Sub loadData(Optional query As String = "SELECT TOP 10 full_name AS Full_Name FROM student_search ORDER BY full_name ASC")
+    Public Sub loadData(Optional query As String = "SELECT TOP 20 full_name AS 'Full Name' FROM student_search ORDER BY full_name ASC")
         Using adpt As New OleDbDataAdapter(query, DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -81,7 +81,7 @@ Public Class Form1
     End Sub
 
     Private Sub student_search_TextChanged(sender As Object, e As EventArgs) Handles student_search.TextChanged
-        loadData($"SELECT TOP 10 full_name AS Full_Name FROM student_search WHERE full_name LIKE '%{student_search.Text}%' ORDER BY full_name ASC")
+        loadData($"SELECT TOP 20 full_name AS 'Full Name' FROM student_search WHERE full_name LIKE '%{student_search.Text}%' ORDER BY full_name ASC")
     End Sub
 
     Private Sub clear_btn_Click(sender As Object, e As EventArgs) Handles clear_btn.Click

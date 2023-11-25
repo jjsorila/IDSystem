@@ -9,7 +9,7 @@ Public Class Prof_Form
     Public isUSIHasRun As Boolean = False
 
     'USI TAB=======================================================================================================================================================
-    Public Sub loadUSIData(Optional query As String = "SELECT Full_Name FROM employee_search ORDER BY Full_Name ASC")
+    Public Sub loadUSIData(Optional query As String = "SELECT Full_Name AS 'Full Name' FROM employee_search ORDER BY Full_Name ASC")
         Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -148,7 +148,7 @@ Public Class Prof_Form
     Private Sub dgv_usi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_usi.CellClick
         Dim row As DataGridViewRow = dgv_usi.CurrentRow
 
-        Using adpt As New OleDbDataAdapter($"SELECT employee_number FROM employee_search WHERE Full_Name='{row.Cells("Full_Name").Value.ToString}'", DB.prof_conn)
+        Using adpt As New OleDbDataAdapter($"SELECT employee_number FROM employee_search WHERE Full_Name='{row.Cells(0).Value.ToString}'", DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
                 hidden_employee_number = dt.Rows(0)("employee_number").ToString
@@ -333,7 +333,7 @@ Public Class Prof_Form
     Dim globalAccessApp As New Microsoft.Office.Interop.Access.Application()
 
     Public Sub loadPIPrintQueue()
-        Using adpt As New OleDbDataAdapter("SELECT employee_number AS Employee_No,lname & ', ' & fname & ' ' & mi AS Full_Name FROM to_print", DB.prof_to_print_conn)
+        Using adpt As New OleDbDataAdapter("SELECT employee_number AS 'Employee No',lname & ', ' & fname & ' ' & mi AS 'Full Name' FROM to_print", DB.prof_to_print_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
                 pi_tp_dgv.DataSource = dt
@@ -341,13 +341,12 @@ Public Class Prof_Form
         End Using
     End Sub
 
-    Public Sub loadPIStudents(Optional query As String = "SELECT TOP 20 Full_Name FROM employee_search ORDER BY Full_Name ASC")
+    Public Sub loadPIStudents(Optional query As String = "SELECT TOP 20 Full_Name AS 'Full Name' FROM employee_search ORDER BY Full_Name ASC")
         Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
                 pi_dgv.DataSource = dt
                 pi_dgv.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-                'pi_dgv.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             End Using
         End Using
 
@@ -545,7 +544,7 @@ Public Class Prof_Form
 
     Private Sub pi_student_search_TextChanged(sender As Object, e As EventArgs) Handles pi_student_search.TextChanged
         If Not pi_student_search.Text = Nothing Or Not pi_student_search.Text = "" Then
-            loadPIStudents($"SELECT TOP 20 Full_Name FROM employee_search WHERE Full_Name LIKE '%{pi_student_search.Text}%' ORDER BY Full_Name ASC")
+            loadPIStudents($"SELECT TOP 20 Full_Name AS 'Full Name' FROM employee_search WHERE Full_Name LIKE '%{pi_student_search.Text}%' ORDER BY Full_Name ASC")
         Else
             loadPIStudents()
         End If
@@ -558,7 +557,7 @@ Public Class Prof_Form
     End Sub
 
     Private Sub pi_dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles pi_dgv.CellClick
-        piSelect = pi_dgv.CurrentRow.Cells("Full_Name").Value.ToString
+        piSelect = pi_dgv.CurrentRow.Cells(0).Value.ToString
     End Sub
 
     Private Sub addToPrintQueueBtn_Click(sender As Object, e As EventArgs) Handles addToPrintQueueBtn.Click
@@ -567,7 +566,7 @@ Public Class Prof_Form
             Exit Sub
         End If
 
-        If pi_tp_dgv.Rows.Count >= 8 Then
+        If pi_tp_dgv.Rows.Count >= 4 Then
             MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
         Else
             If piSelect = Nothing Then
@@ -577,7 +576,7 @@ Public Class Prof_Form
                 Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
                 Dim isFound As Boolean = False
                 For Each row As DataGridViewRow In rows
-                    If UCase(row.Cells("Full_Name").Value.ToString) = UCase(piSelect) Then
+                    If UCase(row.Cells(1).Value.ToString) = UCase(piSelect) Then
                         isFound = True
                     End If
                 Next
@@ -648,7 +647,7 @@ Public Class Prof_Form
 
     Private Sub studentSearchUSI_TextChanged(sender As Object, e As EventArgs) Handles studentSearchUSI.TextChanged
         If Not studentSearchUSI.Text = Nothing Or Not studentSearchUSI.Text = "" Then
-            loadUSIData($"SELECT Full_Name FROM employee_search WHERE Full_Name LIKE '%{studentSearchUSI.Text}%' ORDER BY Full_Name ASC")
+            loadUSIData($"SELECT Full_Name AS 'Full Name' FROM employee_search WHERE Full_Name LIKE '%{studentSearchUSI.Text}%' ORDER BY Full_Name ASC")
         Else
             loadUSIData()
         End If

@@ -10,7 +10,7 @@ Public Class Admin_Form
     Public isUSIHasRun As Boolean = False
 
     'USI TAB=======================================================================================================================================================
-    Public Sub loadUSIData(Optional query As String = "SELECT full_name AS Full_Name FROM student_search ORDER BY full_name ASC")
+    Public Sub loadUSIData(Optional query As String = "SELECT TOP 20 full_name AS 'Full Name' FROM student_search ORDER BY full_name ASC")
         Using adpt As New OleDbDataAdapter(query, DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
@@ -77,7 +77,7 @@ Public Class Admin_Form
         If studentSearchUSI.Text = Nothing Or studentSearchUSI.Text = "" Then
             loadUSIData()
         Else
-            loadUSIData($"SELECT full_name AS Full_Name FROM student_search WHERE full_name LIKE '%{studentSearchUSI.Text}%' ORDER BY full_name ASC")
+            loadUSIData($"SELECT TOP 20 full_name AS 'Full Name' FROM student_search WHERE full_name LIKE '%{studentSearchUSI.Text}%' ORDER BY full_name ASC")
         End If
     End Sub
 
@@ -99,7 +99,7 @@ Public Class Admin_Form
 
     Private Sub dgv_usi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_usi.CellClick
         Dim row As DataGridViewRow = dgv_usi.CurrentRow
-        Using find_record_num_adpt As New OleDbDataAdapter($"SELECT record_number FROM student_search WHERE full_name='{row.Cells("Full_Name").Value}'", DB.student_data_conn)
+        Using find_record_num_adpt As New OleDbDataAdapter($"SELECT record_number FROM student_search WHERE full_name='{row.Cells(0).Value}'", DB.student_data_conn)
             Using fing_record_num_dt As New DataTable
                 find_record_num_adpt.Fill(fing_record_num_dt)
                 record_number = fing_record_num_dt.Rows(0)(0).ToString()
@@ -271,7 +271,7 @@ Public Class Admin_Form
     End Function
 
     Public Sub loadPIPrintQueue()
-        Using adpt As New OleDbDataAdapter("SELECT s_number AS Student_Number,lname & ', ' & fname & ' ' & mi AS Full_Name FROM to_print", DB.student_to_print_conn)
+        Using adpt As New OleDbDataAdapter("SELECT s_number AS 'Student Number',lname & ', ' & fname & ' ' & mi AS 'Full Name' FROM to_print", DB.student_to_print_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
                 pi_tp_dgv.DataSource = dt
@@ -296,7 +296,7 @@ Public Class Admin_Form
             yearQuery = "NOT s_year IS NULL"
         End If
 
-        Using adpt As New OleDbDataAdapter($"SELECT TOP 20 id_release_count AS ID_Release_Count,full_name AS Full_Name FROM student_search WHERE {ssQuery} AND {courseQuery} AND {yearQuery} ORDER BY full_name ASC", DB.student_data_conn)
+        Using adpt As New OleDbDataAdapter($"SELECT TOP 20 id_release_count AS 'ID Release Count',full_name AS 'Full Name' FROM student_search WHERE {ssQuery} AND {courseQuery} AND {yearQuery} ORDER BY full_name ASC", DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
                 pi_dgv.DataSource = dt
@@ -354,7 +354,7 @@ Public Class Admin_Form
             Exit Sub
         End If
 
-        If pi_tp_dgv.Rows.Count >= 10 Then
+        If pi_tp_dgv.Rows.Count >= 5 Then
             MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
         Else
             If piSelect = Nothing Then
@@ -364,7 +364,7 @@ Public Class Admin_Form
                 Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
                 Dim isFound As Boolean = False
                 For Each row As DataGridViewRow In rows
-                    If UCase(row.Cells("Full_Name").Value.ToString) = UCase(piSelect) Then
+                    If UCase(row.Cells(1).Value.ToString) = UCase(piSelect) Then
                         isFound = True
                     End If
                 Next
@@ -442,7 +442,7 @@ Public Class Admin_Form
     End Sub
 
     Private Sub pi_dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles pi_dgv.CellClick
-        piSelect = pi_dgv.CurrentRow.Cells("Full_Name").Value.ToString
+        piSelect = pi_dgv.CurrentRow.Cells(1).Value.ToString
     End Sub
 
     Private Sub removeSelectedBtn_Click(sender As Object, e As EventArgs) Handles removeSelectedBtn.Click

@@ -59,12 +59,12 @@ Partial Class Select_Signature_Source
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 132)
+        Me.Label1.Location = New System.Drawing.Point(21, 132)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(443, 60)
+        Me.Label1.Size = New System.Drawing.Size(479, 60)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Important Note (From File):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must have a dimension of 300 (width) by 100 (lengt" &
-    "h)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must be white or transparent background" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label1.Text = "Important Note (From File):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must have a dimension of 300px (width) by 100px (l" &
+    "ength)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must be transparent background"
         '
         'Select_Signature_Source
         '

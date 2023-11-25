@@ -59,14 +59,14 @@ Partial Class Admin_Select_Signature_Source
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 132)
+        Me.Label1.Location = New System.Drawing.Point(21, 133)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(443, 60)
+        Me.Label1.Size = New System.Drawing.Size(479, 60)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Important Note (From File):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must have a dimension of 300 (width) by 100 (lengt" &
-    "h)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must be white or transparent background" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label1.Text = "Important Note (From File):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must have a dimension of 300px (width) by 100px (l" &
+    "ength)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Must be transparent background"
         '
-        'Select_Signature_Source
+        'Admin_Select_Signature_Source
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -77,7 +77,7 @@ Partial Class Admin_Select_Signature_Source
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Select_Signature_Source"
+        Me.Name = "Admin_Select_Signature_Source"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Signature Source"
         Me.ResumeLayout(False)
