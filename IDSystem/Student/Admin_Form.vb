@@ -553,9 +553,8 @@ Public Class Admin_Form
                         globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
 
                         DB.student_data_conn.Open()
-
                         For Each row As DataGridViewRow In rows
-                            Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells("Student_Number").Value}'", DB.student_data_conn)
+                            Using cmdUpdate As New OleDbCommand($"UPDATE students SET id_release_count=[id_release_count]+1 WHERE s_number='{row.Cells(0).Value}'", DB.student_data_conn)
                                 cmdUpdate.ExecuteNonQuery()
                             End Using
                         Next
