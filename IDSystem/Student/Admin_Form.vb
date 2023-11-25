@@ -582,7 +582,6 @@ Public Class Admin_Form
             MsgBox(ex.Message)
         Finally
             DB.student_to_print_conn.Close()
-            MsgBox("Print started")
         End Try
     End Sub
 

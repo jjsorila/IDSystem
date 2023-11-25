@@ -530,7 +530,6 @@ Public Class Prof_Form
             MsgBox(ex.Message)
         Finally
             DB.prof_to_print_conn.Close()
-            MsgBox("Print started")
         End Try
     End Sub
 
