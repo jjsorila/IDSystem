@@ -459,7 +459,7 @@ Public Class Admin_Form
                 DB.student_to_print_conn.Open()
                 Dim cmd As New OleDbCommand
                 For Each row As DataGridViewRow In rows
-                    cmd.CommandText = $"DELETE FROM to_print WHERE s_number='{row.Cells("Student_Number").Value.ToString}'"
+                    cmd.CommandText = $"DELETE FROM to_print WHERE s_number='{row.Cells(0).Value.ToString}'"
                     cmd.Connection = DB.student_to_print_conn
                     cmd.ExecuteNonQuery()
                 Next
