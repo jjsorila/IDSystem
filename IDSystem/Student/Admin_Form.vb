@@ -296,7 +296,7 @@ Public Class Admin_Form
             yearQuery = "NOT s_year IS NULL"
         End If
 
-        Using adpt As New OleDbDataAdapter($"SELECT TOP 20 id_release_count AS 'ID Release Count',full_name AS 'Full Name' FROM student_search WHERE {ssQuery} AND {courseQuery} AND {yearQuery} ORDER BY full_name ASC", DB.student_data_conn)
+        Using adpt As New OleDbDataAdapter($"SELECT TOP 20 id_release_count AS 'ID Count',full_name AS 'Full Name' FROM student_search WHERE {ssQuery} AND {courseQuery} AND {yearQuery} ORDER BY full_name ASC", DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
                 pi_dgv.DataSource = dt
