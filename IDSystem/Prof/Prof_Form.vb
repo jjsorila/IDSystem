@@ -521,6 +521,8 @@ Public Class Prof_Form
                         Finally
                             DB.prof_to_print_conn.Close()
                         End Try
+
+                        globalAccessApp.DoCmd.Close()
                     End If
                 End If
             End If

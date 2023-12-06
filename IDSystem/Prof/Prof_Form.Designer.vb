@@ -671,7 +671,7 @@ Partial Class Prof_Form
         Me.pi_tp_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -847,7 +847,7 @@ Partial Class Prof_Form
         Me.pi_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -938,7 +938,6 @@ Partial Class Prof_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(984, 811)
         Me.Controls.Add(Me.TabControl1)

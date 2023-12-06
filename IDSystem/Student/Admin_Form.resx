@@ -679,7 +679,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 622</value>
+    <value>122, 610</value>
   </data>
   <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 23</value>
@@ -709,7 +709,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 529</value>
+    <value>121, 526</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 23</value>
@@ -739,7 +739,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 442</value>
+    <value>182, 439</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 23</value>
@@ -856,7 +856,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="e_person.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 648</value>
+    <value>37, 636</value>
   </data>
   <data name="e_person.Size" type="System.Drawing.Size, System.Drawing">
     <value>393, 30</value>
@@ -883,7 +883,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="e_number.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 555</value>
+    <value>37, 552</value>
   </data>
   <data name="e_number.MaxLength" type="System.Int32, mscorlib">
     <value>11</value>
@@ -913,7 +913,7 @@
     <value>Comic Sans MS, 12pt, style=Bold</value>
   </data>
   <data name="address.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 468</value>
+    <value>34, 465</value>
   </data>
   <data name="address.Size" type="System.Drawing.Size, System.Drawing">
     <value>396, 30</value>
@@ -1155,153 +1155,6 @@
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="remove_validity.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="remove_validity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 9pt, style=Bold</value>
-  </data>
-  <data name="remove_validity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="remove_validity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 105</value>
-  </data>
-  <data name="remove_validity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 30</value>
-  </data>
-  <data name="remove_validity.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="remove_validity.Text" xml:space="preserve">
-    <value>REMOVE</value>
-  </data>
-  <data name="&gt;&gt;remove_validity.Name" xml:space="preserve">
-    <value>remove_validity</value>
-  </data>
-  <data name="&gt;&gt;remove_validity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remove_validity.Parent" xml:space="preserve">
-    <value>GroupBox6</value>
-  </data>
-  <data name="&gt;&gt;remove_validity.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="add_validity.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="add_validity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 9pt, style=Bold</value>
-  </data>
-  <data name="add_validity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="add_validity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 50</value>
-  </data>
-  <data name="add_validity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 30</value>
-  </data>
-  <data name="add_validity.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="add_validity.Text" xml:space="preserve">
-    <value>ADD</value>
-  </data>
-  <data name="&gt;&gt;add_validity.Name" xml:space="preserve">
-    <value>add_validity</value>
-  </data>
-  <data name="&gt;&gt;add_validity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;add_validity.Parent" xml:space="preserve">
-    <value>GroupBox6</value>
-  </data>
-  <data name="&gt;&gt;add_validity.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="uid_add_validity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 12pt, style=Bold</value>
-  </data>
-  <data name="uid_add_validity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 50</value>
-  </data>
-  <data name="uid_add_validity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 30</value>
-  </data>
-  <data name="uid_add_validity.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="uid_add_validity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;uid_add_validity.Name" xml:space="preserve">
-    <value>uid_add_validity</value>
-  </data>
-  <data name="&gt;&gt;uid_add_validity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uid_add_validity.Parent" xml:space="preserve">
-    <value>GroupBox6</value>
-  </data>
-  <data name="&gt;&gt;uid_add_validity.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="uid_validity.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="uid_validity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 12pt, style=Bold</value>
-  </data>
-  <data name="uid_validity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
-  </data>
-  <data name="uid_validity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 31</value>
-  </data>
-  <data name="uid_validity.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;uid_validity.Name" xml:space="preserve">
-    <value>uid_validity</value>
-  </data>
-  <data name="&gt;&gt;uid_validity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uid_validity.Parent" xml:space="preserve">
-    <value>GroupBox6</value>
-  </data>
-  <data name="&gt;&gt;uid_validity.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="GroupBox6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 14pt, style=Bold</value>
-  </data>
-  <data name="GroupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 76</value>
-  </data>
-  <data name="GroupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 160</value>
-  </data>
-  <data name="GroupBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupBox6.Text" xml:space="preserve">
-    <value>ADD/REMOVE ID VALIDITY</value>
-  </data>
-  <data name="&gt;&gt;GroupBox6.Name" xml:space="preserve">
-    <value>GroupBox6</value>
-  </data>
-  <data name="&gt;&gt;GroupBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox6.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="remove_course.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1426,7 +1279,7 @@
     <value>Comic Sans MS, 14pt, style=Bold</value>
   </data>
   <data name="GroupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 279</value>
+    <value>257, 365</value>
   </data>
   <data name="GroupBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>444, 160</value>
@@ -1447,33 +1300,39 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="uid_update_validity.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="uid_validity_indicator.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="uid_update_validity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Comic Sans MS, 12pt, style=Bold</value>
+  <data name="uid_validity_indicator.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Comic Sans MS, 14pt, style=Bold</value>
   </data>
-  <data name="uid_update_validity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 46</value>
+  <data name="uid_validity_indicator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="uid_update_validity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 31</value>
+  <data name="uid_validity_indicator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 115</value>
   </data>
-  <data name="uid_update_validity.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="uid_validity_indicator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 27</value>
   </data>
-  <data name="&gt;&gt;uid_update_validity.Name" xml:space="preserve">
-    <value>uid_update_validity</value>
+  <data name="uid_validity_indicator.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
-  <data name="&gt;&gt;uid_update_validity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="uid_validity_indicator.Text" xml:space="preserve">
+    <value>Current ID Validity:</value>
   </data>
-  <data name="&gt;&gt;uid_update_validity.Parent" xml:space="preserve">
+  <data name="&gt;&gt;uid_validity_indicator.Name" xml:space="preserve">
+    <value>uid_validity_indicator</value>
+  </data>
+  <data name="&gt;&gt;uid_validity_indicator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uid_validity_indicator.Parent" xml:space="preserve">
     <value>GroupBox10</value>
   </data>
-  <data name="&gt;&gt;uid_update_validity.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;uid_validity_indicator.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="updateAllBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -1486,7 +1345,7 @@
     <value>NoControl</value>
   </data>
   <data name="updateAllBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 94</value>
+    <value>16, 47</value>
   </data>
   <data name="updateAllBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>417, 49</value>
@@ -1495,7 +1354,7 @@
     <value>20</value>
   </data>
   <data name="updateAllBtn.Text" xml:space="preserve">
-    <value>UPDATE ALL</value>
+    <value>UPDATE</value>
   </data>
   <data name="&gt;&gt;updateAllBtn.Name" xml:space="preserve">
     <value>updateAllBtn</value>
@@ -1513,10 +1372,10 @@
     <value>Comic Sans MS, 14pt, style=Bold</value>
   </data>
   <data name="GroupBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 486</value>
+    <value>257, 111</value>
   </data>
   <data name="GroupBox10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 160</value>
+    <value>444, 161</value>
   </data>
   <data name="GroupBox10.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1534,7 +1393,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;GroupBox10.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 33</value>

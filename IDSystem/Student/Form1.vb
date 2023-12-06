@@ -133,19 +133,10 @@ Public Class Form1
                         modifiedMi = $"{mi.Text}."
                     End If
 
-                    Dim new_sy As New Date(Date.Now.Year, 7, 1)
-                    Dim curr_year As Integer = Date.Now.Year
-                    Dim setValidity As String
-                    If Date.Now < new_sy Then
-                        setValidity = $"{curr_year - 1}-{(curr_year).ToString.Substring(curr_year.ToString.Length - 2)}"
-                    Else
-                        setValidity = $"{curr_year}-{(curr_year + 1).ToString.Substring((curr_year + 1).ToString.Length - 2)}"
-                    End If
-
                     DB.student_data_conn.Open()
 
                     'Insert record
-                    Using cmd_insert As New OleDbCommand("INSERT INTO students([s_number],[fname],[mi],[lname],[address],[e_number],[e_person],[s_year],[s_course],[s_validity]) VALUES(@snumber,@fname,@mi,@lname,@addr,@enumber,@eperson,@syear,@scourse,@svalidity)", DB.student_data_conn)
+                    Using cmd_insert As New OleDbCommand("INSERT INTO students([s_number],[fname],[mi],[lname],[address],[e_number],[e_person],[s_year],[s_course]) VALUES(@snumber,@fname,@mi,@lname,@addr,@enumber,@eperson,@syear,@scourse)", DB.student_data_conn)
                         With cmd_insert
                             .Parameters.AddWithValue("@snumber", s_number.Text)
                             .Parameters.AddWithValue("@fname", StrConv(fname.Text, 3))
@@ -156,7 +147,6 @@ Public Class Form1
                             .Parameters.AddWithValue("@eperson", e_person.Text)
                             .Parameters.AddWithValue("@syear", year.Text)
                             .Parameters.AddWithValue("@scourse", course.Text)
-                            .Parameters.AddWithValue("@svalidity", setValidity)
                             .ExecuteNonQuery()
                         End With
                     End Using
@@ -213,6 +203,7 @@ Public Class Form1
             For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
                 process.Kill()
             Next
+            Admin_Form.Close()
         Catch ex As Exception
 
         Finally
@@ -223,7 +214,6 @@ Public Class Form1
             Home.Show()
             Me.Dispose()
             Me.Close()
-            Admin_Form.Close()
         End Try
     End Sub
 

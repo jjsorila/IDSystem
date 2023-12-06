@@ -69,18 +69,12 @@ Partial Class Admin_Form
         Me.usi_id_signature = New System.Windows.Forms.PictureBox()
         Me.usi_id_picture = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.remove_validity = New System.Windows.Forms.Button()
-        Me.add_validity = New System.Windows.Forms.Button()
-        Me.uid_add_validity = New System.Windows.Forms.TextBox()
-        Me.uid_validity = New System.Windows.Forms.ComboBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.remove_course = New System.Windows.Forms.Button()
         Me.add_course = New System.Windows.Forms.Button()
         Me.uid_add_course = New System.Windows.Forms.TextBox()
         Me.uid_course = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.uid_update_validity = New System.Windows.Forms.ComboBox()
         Me.updateAllBtn = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -106,6 +100,7 @@ Partial Class Admin_Form
         Me.PrinterList = New System.Windows.Forms.PrintDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uid_validity_indicator = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -116,7 +111,6 @@ Partial Class Admin_Form
         CType(Me.usi_id_signature, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.usi_id_picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -212,7 +206,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
@@ -447,62 +441,10 @@ Partial Class Admin_Form
         '
         Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
-        Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.GroupBox5)
         Me.TabPage2.Controls.Add(Me.GroupBox10)
         resources.ApplyResources(Me.TabPage2, "TabPage2")
         Me.TabPage2.Name = "TabPage2"
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox6.Controls.Add(Me.remove_validity)
-        Me.GroupBox6.Controls.Add(Me.add_validity)
-        Me.GroupBox6.Controls.Add(Me.uid_add_validity)
-        Me.GroupBox6.Controls.Add(Me.uid_validity)
-        Me.GroupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        resources.ApplyResources(Me.GroupBox6, "GroupBox6")
-        Me.GroupBox6.ForeColor = System.Drawing.Color.White
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.TabStop = False
-        '
-        'remove_validity
-        '
-        Me.remove_validity.BackColor = System.Drawing.Color.Transparent
-        Me.remove_validity.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.remove_validity.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.remove_validity.FlatAppearance.BorderSize = 3
-        Me.remove_validity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.remove_validity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        resources.ApplyResources(Me.remove_validity, "remove_validity")
-        Me.remove_validity.ForeColor = System.Drawing.Color.White
-        Me.remove_validity.Name = "remove_validity"
-        Me.remove_validity.UseVisualStyleBackColor = False
-        '
-        'add_validity
-        '
-        Me.add_validity.BackColor = System.Drawing.Color.Transparent
-        Me.add_validity.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.add_validity.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.add_validity.FlatAppearance.BorderSize = 3
-        Me.add_validity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.add_validity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        resources.ApplyResources(Me.add_validity, "add_validity")
-        Me.add_validity.ForeColor = System.Drawing.Color.White
-        Me.add_validity.Name = "add_validity"
-        Me.add_validity.UseVisualStyleBackColor = False
-        '
-        'uid_add_validity
-        '
-        resources.ApplyResources(Me.uid_add_validity, "uid_add_validity")
-        Me.uid_add_validity.Name = "uid_add_validity"
-        '
-        'uid_validity
-        '
-        Me.uid_validity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        resources.ApplyResources(Me.uid_validity, "uid_validity")
-        Me.uid_validity.FormattingEnabled = True
-        Me.uid_validity.Name = "uid_validity"
         '
         'GroupBox5
         '
@@ -558,20 +500,13 @@ Partial Class Admin_Form
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox10.Controls.Add(Me.uid_update_validity)
+        Me.GroupBox10.Controls.Add(Me.uid_validity_indicator)
         Me.GroupBox10.Controls.Add(Me.updateAllBtn)
         Me.GroupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         resources.ApplyResources(Me.GroupBox10, "GroupBox10")
         Me.GroupBox10.ForeColor = System.Drawing.Color.White
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.TabStop = False
-        '
-        'uid_update_validity
-        '
-        Me.uid_update_validity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        resources.ApplyResources(Me.uid_update_validity, "uid_update_validity")
-        Me.uid_update_validity.FormattingEnabled = True
-        Me.uid_update_validity.Name = "uid_update_validity"
         '
         'updateAllBtn
         '
@@ -876,11 +811,15 @@ Partial Class Admin_Form
         resources.ApplyResources(Me.ToolStripMenuItem2, "ToolStripMenuItem2")
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         '
+        'uid_validity_indicator
+        '
+        resources.ApplyResources(Me.uid_validity_indicator, "uid_validity_indicator")
+        Me.uid_validity_indicator.Name = "uid_validity_indicator"
+        '
         'Admin_Form
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.IDSystem.My.Resources.Resources.bg1
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -899,11 +838,10 @@ Partial Class Admin_Form
         CType(Me.usi_id_signature, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.usi_id_picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.pi_tp_dgv, System.ComponentModel.ISupportInitialize).EndInit()
@@ -926,7 +864,6 @@ Partial Class Admin_Form
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents printBtn As Button
     Friend WithEvents previewBtn As Button
     Friend WithEvents modifyBtn As Button
@@ -936,14 +873,10 @@ Partial Class Admin_Form
     Friend WithEvents pi_course As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents uid_course As ComboBox
-    Friend WithEvents uid_validity As ComboBox
     Friend WithEvents pi_year As ComboBox
     Friend WithEvents uid_add_course As TextBox
-    Friend WithEvents uid_add_validity As TextBox
     Friend WithEvents remove_course As Button
     Friend WithEvents add_course As Button
-    Friend WithEvents remove_validity As Button
-    Friend WithEvents add_validity As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
@@ -982,7 +915,6 @@ Partial Class Admin_Form
     Friend WithEvents pi_tp_dgv As DataGridView
     Friend WithEvents pi_refreshBtn As Button
     Friend WithEvents updateAllBtn As Button
-    Friend WithEvents uid_update_validity As ComboBox
     Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents CleanupWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents id_count_label As Label
@@ -993,4 +925,5 @@ Partial Class Admin_Form
     Friend WithEvents id_validity_indicator As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents uid_validity_indicator As Label
 End Class

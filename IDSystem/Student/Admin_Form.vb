@@ -323,10 +323,10 @@ Public Class Admin_Form
 
     Private Sub TabPage3_Enter(sender As Object, e As EventArgs) Handles TabPage3.Enter
         If Not isPIHasRun Then
-            Using adpt As New OleDbDataAdapter("SELECT TOP 1 s_validity FROM students", DB.student_data_conn)
+            Using adpt As New OleDbDataAdapter("SELECT current_validity FROM validity", DB.student_id_details_conn)
                 Using dt As New DataTable
                     adpt.Fill(dt)
-                    id_validity_indicator.Text = $"Current ID Validity: {dt.Rows(0)("s_validity").ToString}"
+                    id_validity_indicator.Text = $"Current ID Validity: {dt.Rows(0)("current_validity").ToString}"
                 End Using
             End Using
             loadPIStudents()
@@ -360,6 +360,14 @@ Public Class Admin_Form
             If piSelect = Nothing Then
                 MsgBox("Please select a student")
             Else
+                Dim setValidity As String
+                Using adpt As New OleDbDataAdapter("SELECT current_validity FROM validity", DB.student_id_details_conn)
+                    Using dt As New DataTable
+                        adpt.Fill(dt)
+                        setValidity = dt.Rows(0)("current_validity")
+                    End Using
+                End Using
+
                 'CHECK IF IT WAS ALREADY IN THE PRINT QUEUE
                 Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
                 Dim isFound As Boolean = False
@@ -395,7 +403,7 @@ Public Class Admin_Form
                     End Using
 
                     'GET ID DETAILS
-                    Dim s_number, fname, lname, mi, address, e_number, e_person, s_course, s_year, s_validity, idPicture, idSignature As String
+                    Dim s_number, fname, lname, mi, address, e_number, e_person, s_course, s_year, idPicture, idSignature As String
                     Using adpt As New OleDbDataAdapter($"SELECT * FROM students WHERE record_number={pi_record_numer}", DB.student_data_conn)
                         Using dt As New DataTable
                             adpt.Fill(dt)
@@ -409,7 +417,6 @@ Public Class Admin_Form
                             e_person = currentRow("e_person")
                             s_course = currentRow("s_course")
                             s_year = currentRow("s_year")
-                            s_validity = currentRow("s_validity")
                             idPicture = $"{Windows.Forms.Application.StartupPath}\student_pictures\{currentRow("picture")}"
                             idSignature = $"{Windows.Forms.Application.StartupPath}\student_signatures\{currentRow("signature")}"
                         End Using
@@ -430,7 +437,7 @@ Public Class Admin_Form
                             .Parameters.AddWithValue("@signature", idSignature)
                             .Parameters.AddWithValue("@s_year", StrReverse(s_year))
                             .Parameters.AddWithValue("@s_course", s_course)
-                            .Parameters.AddWithValue("@s_validity", StrReverse(s_validity))
+                            .Parameters.AddWithValue("@s_validity", StrReverse(setValidity))
                             .ExecuteNonQuery()
                         End With
                     End Using
@@ -523,6 +530,8 @@ Public Class Admin_Form
     End Sub
 
     Private Sub printBtn_Click(sender As Object, e As EventArgs) Handles printBtn.Click
+        DB.student_data_conn.Close()
+        DB.student_to_print_conn.Close()
         printBtn.Enabled = False
         Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
 
@@ -579,6 +588,8 @@ Public Class Admin_Form
                             DB.student_to_print_conn.Close()
                         End Try
 
+                        globalAccessApp.DoCmd.Close()
+
                     End If
                 End If
             End If
@@ -613,59 +624,27 @@ Public Class Admin_Form
 
     Public Sub UIDClearInput()
         uid_add_course.Clear()
-        uid_add_validity.Clear()
-        uid_update_validity.SelectedIndex = 0
         uid_course.SelectedIndex = 0
-        uid_validity.SelectedIndex = 0
     End Sub
 
     Public Sub loadUIDComboBox()
         Dim adpt_course As New OleDbDataAdapter("SELECT * FROM courses", DB.student_id_details_conn)
-        Dim adpt_validity As New OleDbDataAdapter("SELECT * FROM validity", DB.student_id_details_conn)
-        Dim dt_course, dt_validity, dt_validity_update As New DataTable
+        Dim dt_course As New DataTable
         adpt_course.Fill(dt_course)
-        adpt_validity.Fill(dt_validity)
-        adpt_validity.Fill(dt_validity_update)
         uid_course.DataSource = dt_course
-        uid_validity.DataSource = dt_validity
-        uid_update_validity.DataSource = dt_validity_update
         uid_course.DisplayMember = "course_list"
-        uid_validity.DisplayMember = "validity_list"
-        uid_update_validity.DisplayMember = "validity_list"
     End Sub
 
     Private Sub TabPage2_Enter(sender As Object, e As EventArgs) Handles TabPage2.Enter
         If Not IsUIDHasRun Then
+            Using adpt As New OleDbDataAdapter("SELECT current_validity FROM validity", DB.student_id_details_conn)
+                Using dt As New DataTable
+                    adpt.Fill(dt)
+                    uid_validity_indicator.Text = $"Current ID Validity: {dt.Rows(0)("current_validity").ToString}"
+                End Using
+            End Using
             loadUIDComboBox()
             IsUIDHasRun = True
-        End If
-    End Sub
-
-    Private Sub add_validity_Click(sender As Object, e As EventArgs) Handles add_validity.Click
-        If uid_add_validity.Text = Nothing Or uid_add_validity.Text = "" Then
-            MsgBox("No input detected")
-        Else
-            Dim isFound As Boolean = False
-            For Each validityItem As DataRowView In uid_validity.Items
-                If validityItem.Item(0).ToString = uid_add_validity.Text Then
-                    isFound = True
-                End If
-            Next
-            If isFound Then
-                MsgBox("Validity already added")
-                Exit Sub
-            End If
-
-            DB.student_id_details_conn.Open()
-            Using cmd As New OleDbCommand($"INSERT INTO validity VALUES('{uid_add_validity.Text}')", DB.student_id_details_conn)
-                cmd.ExecuteNonQuery()
-            End Using
-            DB.student_id_details_conn.Close()
-            loadUIDComboBox()
-            loadPIComboBox()
-            loadUSIComboBox()
-            UIDClearInput()
-            MsgBox("Added successfully")
         End If
     End Sub
 
@@ -698,23 +677,6 @@ Public Class Admin_Form
         End If
     End Sub
 
-    Private Sub remove_validity_Click(sender As Object, e As EventArgs) Handles remove_validity.Click
-        If uid_validity.SelectedIndex = 0 Then
-            MsgBox("Select validity")
-        Else
-            DB.student_id_details_conn.Open()
-            Using cmd As New OleDbCommand($"DELETE FROM validity WHERE validity_list='{uid_validity.Text}'", DB.student_id_details_conn)
-                cmd.ExecuteNonQuery()
-            End Using
-            DB.student_id_details_conn.Close()
-            loadUIDComboBox()
-            loadPIComboBox()
-            loadUSIComboBox()
-            UIDClearInput()
-            MsgBox("Deleted successfully")
-        End If
-    End Sub
-
     Private Sub remove_course_Click(sender As Object, e As EventArgs) Handles remove_course.Click
         If uid_course.SelectedIndex = 0 Then
             MsgBox("Select course")
@@ -734,16 +696,33 @@ Public Class Admin_Form
     End Sub
 
     Private Sub updateAllBtn_Click(sender As Object, e As EventArgs) Handles updateAllBtn.Click
-        If uid_update_validity.SelectedIndex = 0 Then
-            MsgBox("Select validity")
-        Else
+        If MsgBox("Do you want to update ID validity? This will reset the ID RELEASE COUNT.", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Dim new_sy As New Date(Date.Now.Year, 7, 1)
+            Dim curr_year As Integer = Date.Now.Year
+            Dim setValidity As String
+            If Date.Now < new_sy Then
+                setValidity = $"{curr_year - 1}-{(curr_year).ToString.Substring(curr_year.ToString.Length - 2)}"
+            Else
+                setValidity = $"{curr_year}-{(curr_year + 1).ToString.Substring((curr_year + 1).ToString.Length - 2)}"
+            End If
+
             Try
+                DB.student_id_details_conn.Open()
+                Using cmd As New OleDbCommand($"UPDATE validity SET current_validity=@s_validity", DB.student_id_details_conn)
+                    With cmd
+                        .Parameters.AddWithValue("@s_validity", setValidity)
+                        .ExecuteNonQuery()
+                    End With
+                End Using
+                DB.student_id_details_conn.Close()
+
                 DB.student_data_conn.Open()
-                Using cmd As New OleDbCommand($"UPDATE students SET s_validity='{uid_update_validity.Text}',id_release_count=0", DB.student_data_conn)
+                Using cmd As New OleDbCommand($"UPDATE students SET id_release_count=0", DB.student_data_conn)
                     cmd.ExecuteNonQuery()
                 End Using
                 DB.student_data_conn.Close()
-                id_validity_indicator.Text = $"Current ID Validity: {uid_update_validity.Text}"
+                id_validity_indicator.Text = $"Current ID Validity: {setValidity}"
+                uid_validity_indicator.Text = $"Current ID Validity: {setValidity}"
                 UIDClearInput()
                 loadPIStudents()
                 loadUSIData()
