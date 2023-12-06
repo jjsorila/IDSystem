@@ -479,6 +479,7 @@ Public Class Prof_Form
     End Sub
 
     Private Sub printBtn_Click(sender As Object, e As EventArgs) Handles printBtn.Click
+        DB.prof_to_print_conn.Close()
         printBtn.Enabled = False
         Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
 
@@ -500,13 +501,20 @@ Public Class Prof_Form
 
                         Dim strAccReport As String = "to_print"
 
-                        globalAccessApp.Visible = False
+                        Try
+                            globalAccessApp.Visible = False
 
-                        globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
+                            globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
 
-                        globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
+                            globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
 
-                        globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
+                            globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
+                        Catch ex As Exception
+                            printBtn.Enabled = True
+                            Exit Sub
+                        Finally
+                            globalAccessApp.DoCmd.Close()
+                        End Try
 
                         Try
                             DB.prof_to_print_conn.Open()
@@ -521,8 +529,6 @@ Public Class Prof_Form
                         Finally
                             DB.prof_to_print_conn.Close()
                         End Try
-
-                        globalAccessApp.DoCmd.Close()
                     End If
                 End If
             End If

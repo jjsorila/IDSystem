@@ -203,7 +203,9 @@ Public Class Form1
             For Each process In System.Diagnostics.Process.GetProcessesByName("MSACCESS")
                 process.Kill()
             Next
-            Admin_Form.Close()
+            If isAdminFormOpen Then
+                Admin_Form.Close()
+            End If
         Catch ex As Exception
 
         Finally

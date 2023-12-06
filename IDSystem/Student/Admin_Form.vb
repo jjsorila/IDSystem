@@ -553,13 +553,20 @@ Public Class Admin_Form
 
                         Dim strAccReport As String = "to_print"
 
-                        globalAccessApp.Visible = False
+                        Try
+                            globalAccessApp.Visible = False
 
-                        globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
+                            globalAccessApp.DoCmd.OpenReport(strAccReport, AcView.acViewPreview, Type.Missing, Type.Missing, AcWindowMode.acWindowNormal, Type.Missing)
 
-                        globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
+                            globalAccessApp.Printer = globalAccessApp.Printers.Item(selectedPrinter)
 
-                        globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
+                            globalAccessApp.DoCmd.PrintOut(AcPrintRange.acPrintAll, Type.Missing, Type.Missing, AcPrintQuality.acHigh, Type.Missing, Type.Missing)
+                        Catch ex As Exception
+                            printBtn.Enabled = True
+                            Exit Sub
+                        Finally
+                            globalAccessApp.DoCmd.Close()
+                        End Try
 
                         Try
                             DB.student_data_conn.Open()
@@ -579,7 +586,6 @@ Public Class Admin_Form
                             Using cmdDelete As New OleDbCommand("DELETE FROM to_print", DB.student_to_print_conn)
                                 cmdDelete.ExecuteNonQuery()
                             End Using
-
                             loadPIPrintQueue()
                             loadPIStudents()
                         Catch ex As Exception
@@ -587,8 +593,6 @@ Public Class Admin_Form
                         Finally
                             DB.student_to_print_conn.Close()
                         End Try
-
-                        globalAccessApp.DoCmd.Close()
 
                     End If
                 End If
