@@ -11,6 +11,7 @@ Public Class Form1
         Using adpt As New OleDbDataAdapter(query, DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                DataGridView1.DefaultCellStyle.ForeColor = Color.Black
                 DataGridView1.DataSource = dt
             End Using
         End Using
@@ -226,5 +227,17 @@ Public Class Form1
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         Help.Show()
+    End Sub
+
+    Private Sub student_search_KeyPress(sender As Object, e As KeyPressEventArgs) Handles student_search.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub input_KeyPress(sender As Object, e As KeyPressEventArgs) Handles lname.KeyPress, fname.KeyPress, e_person.KeyPress, address.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
     End Sub
 End Class

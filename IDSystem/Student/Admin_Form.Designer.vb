@@ -75,6 +75,7 @@ Partial Class Admin_Form
         Me.uid_add_course = New System.Windows.Forms.TextBox()
         Me.uid_course = New System.Windows.Forms.ComboBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.uid_validity_indicator = New System.Windows.Forms.Label()
         Me.updateAllBtn = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -100,7 +101,6 @@ Partial Class Admin_Form
         Me.PrinterList = New System.Windows.Forms.PrintDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.uid_validity_indicator = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -194,7 +194,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -508,6 +508,11 @@ Partial Class Admin_Form
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.TabStop = False
         '
+        'uid_validity_indicator
+        '
+        resources.ApplyResources(Me.uid_validity_indicator, "uid_validity_indicator")
+        Me.uid_validity_indicator.Name = "uid_validity_indicator"
+        '
         'updateAllBtn
         '
         Me.updateAllBtn.BackColor = System.Drawing.Color.Transparent
@@ -567,7 +572,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -706,7 +711,7 @@ Partial Class Admin_Form
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Comic Sans MS", 14.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -810,11 +815,6 @@ Partial Class Admin_Form
         Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Yellow
         resources.ApplyResources(Me.ToolStripMenuItem2, "ToolStripMenuItem2")
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        '
-        'uid_validity_indicator
-        '
-        resources.ApplyResources(Me.uid_validity_indicator, "uid_validity_indicator")
-        Me.uid_validity_indicator.Name = "uid_validity_indicator"
         '
         'Admin_Form
         '

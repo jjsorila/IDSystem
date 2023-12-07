@@ -14,6 +14,7 @@ Public Class Admin_Form
         Using adpt As New OleDbDataAdapter(query, DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                dgv_usi.DefaultCellStyle.ForeColor = Color.Black
                 dgv_usi.DataSource = dt
             End Using
         End Using
@@ -274,6 +275,7 @@ Public Class Admin_Form
         Using adpt As New OleDbDataAdapter("SELECT s_number AS 'Student Number',lname & ', ' & fname & ' ' & mi AS 'Full Name' FROM to_print", DB.student_to_print_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                pi_tp_dgv.DefaultCellStyle.ForeColor = Color.Black
                 pi_tp_dgv.DataSource = dt
             End Using
         End Using
@@ -299,6 +301,7 @@ Public Class Admin_Form
         Using adpt As New OleDbDataAdapter($"SELECT TOP 20 id_release_count AS 'ID Count',full_name AS 'Full Name' FROM student_search WHERE {ssQuery} AND {courseQuery} AND {yearQuery} ORDER BY full_name ASC", DB.student_data_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                pi_dgv.DefaultCellStyle.ForeColor = Color.Black
                 pi_dgv.DataSource = dt
                 pi_dgv.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
                 pi_dgv.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -767,5 +770,29 @@ Public Class Admin_Form
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         Admin_Help.Show()
+    End Sub
+
+    Private Sub studentSearchUSI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles studentSearchUSI.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub pi_student_search_KeyPress(sender As Object, e As KeyPressEventArgs) Handles pi_student_search.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub input_KeyPress(sender As Object, e As KeyPressEventArgs) Handles lname.KeyPress, fname.KeyPress, e_person.KeyPress, address.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub uid_add_course_KeyPress(sender As Object, e As KeyPressEventArgs) Handles uid_add_course.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
     End Sub
 End Class

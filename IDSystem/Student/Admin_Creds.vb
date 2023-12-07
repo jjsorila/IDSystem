@@ -36,4 +36,10 @@ Public Class Admin_Creds
         Me.Dispose()
         clearInput()
     End Sub
+
+    Private Sub pinTxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles pinTxt.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

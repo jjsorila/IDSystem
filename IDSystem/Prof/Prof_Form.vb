@@ -13,6 +13,7 @@ Public Class Prof_Form
         Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                dgv_usi.DefaultCellStyle.ForeColor = Color.Black
                 dgv_usi.DataSource = dt
             End Using
         End Using
@@ -336,6 +337,7 @@ Public Class Prof_Form
         Using adpt As New OleDbDataAdapter("SELECT employee_number AS 'Employee No',lname & ', ' & fname & ' ' & mi AS 'Full Name' FROM to_print", DB.prof_to_print_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                pi_tp_dgv.DefaultCellStyle.ForeColor = Color.Black
                 pi_tp_dgv.DataSource = dt
             End Using
         End Using
@@ -345,6 +347,7 @@ Public Class Prof_Form
         Using adpt As New OleDbDataAdapter(query, DB.prof_conn)
             Using dt As New DataTable
                 adpt.Fill(dt)
+                pi_dgv.DefaultCellStyle.ForeColor = Color.Black
                 pi_dgv.DataSource = dt
                 pi_dgv.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             End Using
@@ -581,7 +584,7 @@ Public Class Prof_Form
             MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
         Else
             If piSelect = Nothing Then
-                MsgBox("Please select a student")
+                MsgBox("Please select a record")
             Else
                 'CHECK IF IT WAS ALREADY IN THE PRINT QUEUE
                 Dim rows As DataGridViewRowCollection = pi_tp_dgv.Rows
@@ -661,6 +664,24 @@ Public Class Prof_Form
             loadUSIData($"SELECT Full_Name AS 'Full Name' FROM employee_search WHERE Full_Name LIKE '%{studentSearchUSI.Text}%' ORDER BY Full_Name ASC")
         Else
             loadUSIData()
+        End If
+    End Sub
+
+    Private Sub studentSearchUSI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles studentSearchUSI.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub pi_student_search_KeyPress(sender As Object, e As KeyPressEventArgs) Handles pi_student_search.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub input_KeyPress(sender As Object, e As KeyPressEventArgs) Handles position.KeyPress, lname.KeyPress, fname.KeyPress, e_person.KeyPress, address.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
         End If
     End Sub
 End Class

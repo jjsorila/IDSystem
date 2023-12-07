@@ -35,4 +35,10 @@ Public Class Change_PIN
         clearInput()
         Me.Dispose()
     End Sub
+
+    Private Sub input_KeyPress(sender As Object, e As KeyPressEventArgs) Handles newPin.KeyPress, confirmPin.KeyPress
+        If Asc(e.KeyChar) = 39 Or Asc(e.KeyChar) = 91 Or Asc(e.KeyChar) = 93 Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
