@@ -64,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
@@ -87,10 +88,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account_Settings.Designer.vb">
+      <DependentUpon>Account_Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Account_Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Password.Designer.vb">
+      <DependentUpon>Change_Password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Change_Password.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Questions.Designer.vb">
+      <DependentUpon>Change_Questions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Change_Questions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Home.Designer.vb">
       <DependentUpon>Home.vb</DependentUpon>
     </Compile>
     <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Prof\Prof_Camera_Form.Designer.vb">
@@ -127,6 +152,12 @@
       <DependentUpon>Prof_Signpad_Form.vb</DependentUpon>
     </Compile>
     <Compile Include="Prof\Prof_Signpad_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security_Questions.Designer.vb">
+      <DependentUpon>Security_Questions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Security_Questions.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student\Admin_Camera_Form.Designer.vb">
@@ -178,12 +209,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Connection.vb" />
-    <Compile Include="Change_PIN.Designer.vb">
-      <DependentUpon>Change_PIN.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Change_PIN.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Student\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -233,8 +258,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Account_Settings.resx">
+      <DependentUpon>Account_Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_Password.resx">
+      <DependentUpon>Change_Password.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_Questions.resx">
+      <DependentUpon>Change_Questions.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prof\Prof_Camera_Form.resx">
       <DependentUpon>Prof_Camera_Form.vb</DependentUpon>
@@ -253,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Prof\Prof_Signpad_Form.resx">
       <DependentUpon>Prof_Signpad_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security_Questions.resx">
+      <DependentUpon>Security_Questions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Admin_Camera_Form.resx">
       <DependentUpon>Admin_Camera_Form.vb</DependentUpon>
@@ -277,9 +317,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Camera_Form.resx">
       <DependentUpon>Camera_Form.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Change_PIN.resx">
-      <DependentUpon>Change_PIN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -442,6 +479,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forgot_password.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

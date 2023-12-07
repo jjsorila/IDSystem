@@ -191,12 +191,18 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PictureBox1.Enabled = False
         If isAdminFormOpen Then
             MsgBox("Admin Form is already open")
         Else
-            Admin_Creds.toProfIdForm = False
-            Admin_Creds.Show()
+            If Login.isAdmin Then
+                isAdminFormOpen = True
+                Admin_Form.Show()
+            Else
+                MsgBox("You must logged in as admin")
+            End If
         End If
+        PictureBox1.Enabled = True
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

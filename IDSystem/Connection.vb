@@ -10,4 +10,5 @@ Public Class Connection
     'PROF DBS
     Public prof_conn As New OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={Application.StartupPath}\Prof_DB.accdb")
     Public prof_to_print_conn As New OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={Application.StartupPath}\Prof_To_Print.accdb")
+
 End Class

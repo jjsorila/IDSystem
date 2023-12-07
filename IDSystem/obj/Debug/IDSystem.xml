@@ -77,6 +77,11 @@ IDSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:IDSystem.My.Resources.Resources.forgot_password">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:IDSystem.My.Resources.Resources.id_signature_placeholder">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
