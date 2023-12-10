@@ -357,7 +357,7 @@ Public Class Admin_Form
             Exit Sub
         End If
 
-        If pi_tp_dgv.Rows.Count >= 5 Then
+        If pi_tp_dgv.Rows.Count >= 4 Then
             MsgBox("Print queue is full", MsgBoxStyle.OkOnly)
         Else
             If piSelect = Nothing Then
@@ -703,15 +703,32 @@ Public Class Admin_Form
     End Sub
 
     Private Sub updateAllBtn_Click(sender As Object, e As EventArgs) Handles updateAllBtn.Click
+        Dim new_sy As New Date(Date.Now.Year, 7, 1)
+        Dim curr_year As Integer = Date.Now.Year
+        Dim setValidity As String
+        If Date.Now < new_sy Then
+            setValidity = $"{curr_year - 1}-{(curr_year).ToString.Substring(curr_year.ToString.Length - 2)}"
+        Else
+            setValidity = $"{curr_year}-{(curr_year + 1).ToString.Substring((curr_year + 1).ToString.Length - 2)}"
+        End If
+
+        'CHECK IF IT IS ALREADY UPDATED
+        Try
+            Using adpt As New OleDbDataAdapter($"SELECT * FROM validity WHERE current_validity='{setValidity}'", DB.student_id_details_conn)
+                Using dt As New DataTable
+                    adpt.Fill(dt)
+                    If dt.Rows.Count >= 1 Then
+                        MsgBox("Current ID validity is already updated")
+                        Exit Sub
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
         If MsgBox("Do you want to update ID validity? This will reset the ID RELEASE COUNT.", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Dim new_sy As New Date(Date.Now.Year, 7, 1)
-            Dim curr_year As Integer = Date.Now.Year
-            Dim setValidity As String
-            If Date.Now < new_sy Then
-                setValidity = $"{curr_year - 1}-{(curr_year).ToString.Substring(curr_year.ToString.Length - 2)}"
-            Else
-                setValidity = $"{curr_year}-{(curr_year + 1).ToString.Substring((curr_year + 1).ToString.Length - 2)}"
-            End If
 
             Try
                 DB.student_id_details_conn.Open()
